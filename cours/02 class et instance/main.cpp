@@ -6,7 +6,7 @@
 /*   By: david <dclark@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 19:17:03 by david             #+#    #+#             */
-/*   Updated: 2022/01/23 19:23:27 by david            ###   ########.fr       */
+/*   Updated: 2022/01/28 11:58:55 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 
 int main(void) {
 
-	std::cout << "Avant Sample\n";
 	Sample	instance;
-	std::cout << "Après l'appel de la class Sample\n";
-	std::cout << "Avant l'appel du destructeur\n";
 
 	return 0;
 }

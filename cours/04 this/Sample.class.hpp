@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sample.class.cpp                                   :+:      :+:    :+:   */
+/*   Sample.class.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: david <dclark@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/23 19:10:42 by david             #+#    #+#             */
-/*   Updated: 2022/01/23 19:17:35 by david            ###   ########.fr       */
+/*   Created: 2022/01/23 19:08:36 by david             #+#    #+#             */
+/*   Updated: 2022/01/28 17:46:49 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Sample.class.hpp"
+#ifndef SAMPLE_CLASS_HPP
+# define SAMPLE_CLASS_HPP
 
-Sample::Sample(void) {
+class Sample {
 
-std::cout << "Constructeur appelé\n";
-return;
+public:
 
-}
+	int	foo;
 
-Sample::~Sample(void) {
+	Sample( void );
+	~Sample( void );
 
-std::cout << "Destructeur appelé\n";
-return;
+	void	bar( void );
 
-}
+};
+
+#endif
