@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Sample2.class.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: david <dclark@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/23 19:17:03 by david             #+#    #+#             */
-/*   Updated: 2022/01/30 15:43:44 by david            ###   ########.fr       */
+/*   Created: 2022/01/23 19:08:36 by david             #+#    #+#             */
+/*   Updated: 2022/01/30 15:23:36 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Sample1.class.h"
-#include "Sample2.class.h"
-#include "Sample3.class.h"
+#ifndef SAMPLE2_CLASS_H
+# define SAMPLE2_CLASS_H
 
-int main(void) {
+class Sample2 {
 
-	Sample1	instance1('a', 42, 23.5f);
-	Sample2	instance2('z', 24, 41.5f);
-	Sample3 instance3('d', 26, 7.0f);
+public:
 
-	return 0;
-}
+	char	a1;
+	int		a2;
+	float	a3;
+
+	Sample2(char p1, int p2, float p3);
+	~Sample2( void );
+
+};
+
+#endif
