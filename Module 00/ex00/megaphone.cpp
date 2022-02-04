@@ -6,11 +6,21 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 16:01:52 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/02 16:14:48 by dclark           ###   ########.fr       */
+/*   Updated: 2022/02/04 12:13:20 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+
+class	Megaphone {
+
+public:
+	
+	Megaphone(void);
+	~Megaphone(void);
+
+
+};
 
 int main(int ac, char**)
 {
@@ -20,5 +30,4 @@ int main(int ac, char**)
 		std::cin >> buff;
 		std::cout << buff;
 	}
-	//std::cout << std::endl;
 }
