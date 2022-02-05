@@ -1,0 +1,3 @@
+non_member is like a static
+There is different syntax because for example in function, the pointeur this
+do not add in argument
