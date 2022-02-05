@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 16:01:52 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/04 12:13:20 by dclark           ###   ########.fr       */
+/*   Updated: 2022/02/04 15:16:02 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,44 @@ class	Megaphone {
 
 public:
 	
+	char	c;
+
 	Megaphone(void);
 	~Megaphone(void);
 
-
+	void	outLoud(char const *str);
 };
 
-int main(int ac, char**)
+Megaphone::Megaphone(void)
 {
-	char	buff[512];
-	for (int i = ac; ac > 0; ac--)
-	{
-		std::cin >> buff;
-		std::cout << buff;
+	return;
+}
+
+Megaphone::~Megaphone(void)
+{
+	return;
+}
+
+void	Megaphone::outLoud(char const *str)
+{
+	for (int i = 0; str[i]; i++) {
+		if (islower(str[i])) {
+			Megaphone::c = toupper(str[i]);
+			std::cout << c;
+		}
+		else
+			std::cout << str[i];
 	}
+}
+
+int main(int ac, char**av)
+{
+	Megaphone Mega;
+
+	if (ac == 1)
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	for (int i = 1; i < ac; i++) {
+		Mega.outLoud(av[i]);
+	}
+	std::cout << std::endl;
 }
