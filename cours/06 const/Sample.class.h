@@ -3,32 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   Sample.class.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
+/*   By: david <dclark@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/05 16:48:51 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/06 21:40:29 by david            ###   ########.fr       */
+/*   Created: 2022/02/01 12:35:01 by david             #+#    #+#             */
+/*   Updated: 2022/02/01 12:48:48 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SAMPLE_CLASS_H
 # define SAMPLE_CLASS_H
 
-#include <iostream>
-#include <string.h>
-
 class Sample {
 
 public:
-	int		foo;
+	
+	float const pi;
+	int			qd;
 
-	Sample(char *name);
+	Sample(float const f1);
 	~Sample(void);
 
-	void	bar(void)const;
-
-private:
-	char	*str;
-
+	void	bar(void)const;	
 };
 
 #endif

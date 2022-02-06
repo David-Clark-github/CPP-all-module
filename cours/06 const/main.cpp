@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sample.class.h                                     :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
+/*   By: david <dclark@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/05 16:48:51 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/06 21:40:29 by david            ###   ########.fr       */
+/*   Created: 2022/02/01 12:44:09 by david             #+#    #+#             */
+/*   Updated: 2022/02/01 12:45:38 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SAMPLE_CLASS_H
-# define SAMPLE_CLASS_H
-
 #include <iostream>
-#include <string.h>
+#include "Sample.class.h"
 
-class Sample {
+int main(void) {
 
-public:
-	int		foo;
+	Sample instance(3.14);
 
-	Sample(char *name);
-	~Sample(void);
+	instance.bar();
 
-	void	bar(void)const;
-
-private:
-	char	*str;
-
-};
-
-#endif
+	return 0;
+}

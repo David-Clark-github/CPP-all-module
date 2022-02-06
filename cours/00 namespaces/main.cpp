@@ -26,6 +26,9 @@ int main(void) {
 	printf("gl_var:			[%d]\n", gl_var);
 	printf("f():			[%d]\n\n", f());
 
+	printf("::gl_var:		[%d]\n", ::gl_var);
+	printf("::f():			[%d]\n\n", ::f());
+
 	printf("Foo::gl_var:		[%d]\n", Foo::gl_var);
 	printf("Foo::f():		[%d]\n\n", Foo::f());
 
@@ -34,9 +37,6 @@ int main(void) {
 
 	printf("Muf::gl_var:		[%d]\n", Muf::gl_var);
 	printf("Muf::f():		[%d]\n\n", Muf::f());
-
-	printf("::gl_var:		[%d]\n", ::gl_var);
-	printf("::f():			[%d]\n\n", ::f());
 
 	return 0;
 }
