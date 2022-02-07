@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Repertoir.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.class.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 12:08:24 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/07 12:22:40 by dclark           ###   ########.fr       */
+/*   Created: 2022/02/04 14:03:16 by dclark            #+#    #+#             */
+/*   Updated: 2022/02/07 14:54:49 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PHONEBOOK_CLASS_H
+# define PHONEBOOK_CLASS_H
+
 #include "Contact.class.h"
 
-int main(int ac, char **av)
-{
-	if (ac < 3) {
-		std::cout << "2 arguments minimum" << std::endl;
-		return 0;
-	}
-	Contact cont1;
+class PhoneBook {
+	
+	int		_RepLen;
+	int		_exit;
 
-	cont1.setPre(av[1]);
-	cont1.setNom(av[2]);
-	std::cout << "Prénom: " << cont1.getPre() << std::endl;
-	std::cout << "Nom: " << cont1.getNom() << std::endl;
-}
+public:	
+
+	Contact	Repertoir[9];
+	
+	int		getExit(void)const;
+	char	command[1024];
+	
+	PhoneBook(void);
+	~PhoneBook(void);
+	
+	void	setExit(int e);
+
+};
+
+#endif

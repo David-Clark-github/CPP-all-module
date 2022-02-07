@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 11:35:17 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/07 12:19:40 by dclark           ###   ########.fr       */
+/*   Updated: 2022/02/07 14:41:16 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Contact {
 	char	*_surnom;
 	char	*_tel;
 	char	*_secret;
+	int		_index;
 public:
 	Contact(void);
 	~Contact(void);
@@ -30,11 +31,13 @@ public:
 	char	*getSur(void)const;
 	char	*getTel(void)const;
 	char	*getSec(void)const;
+	int		getInd(void)const;
 	void	setPre(char *str);
 	void	setNom(char *str);
 	void	setSur(char *str);
 	void	setTel(char *str);
 	void	setSec(char *str);
+	void	setInd(int i);
 };
 
 #endif
