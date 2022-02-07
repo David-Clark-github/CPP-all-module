@@ -6,7 +6,7 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/02/04 13:41:35 by dclark           ###   ########.fr        #
+#    Updated: 2022/02/07 11:12:31 by dclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRCS	= megaphone.cpp
 
 HEADER	= ./
 
-NAME	= Mégaphone
+NAME	= megaphone
 
 CFLAGS	+= -Wall -Werror -Wextra -I $(HEADER) -std=c++98
 
