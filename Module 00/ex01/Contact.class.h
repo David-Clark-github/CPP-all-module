@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 11:35:17 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/07 14:41:16 by dclark           ###   ########.fr       */
+/*   Updated: 2022/02/08 11:40:55 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ public:
 	void	setTel(char *str);
 	void	setSec(char *str);
 	void	setInd(int i);
+
+	void	SearchContact(void);
+
 };
 
 #endif
