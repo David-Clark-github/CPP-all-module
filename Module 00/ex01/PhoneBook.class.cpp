@@ -6,11 +6,13 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 13:46:16 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/08 12:26:04 by david            ###   ########.fr       */
+/*   Updated: 2022/02/08 13:14:38 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.class.h"
+#include <iostream>
+#include <string>
 
 PhoneBook::PhoneBook(void)
 {
@@ -18,7 +20,7 @@ PhoneBook::PhoneBook(void)
 	this->_RepLen = 0;
 	for (int i = 0; i < 8; i++) {
 		this->Repertoir[i].setInd(0);
-		this->Repertoir[i].setPre("Dada");
+		this->Repertoir[i].setTab("012345678", ipre);
 	}
 	return;
 }
@@ -48,9 +50,9 @@ void	PhoneBook::displayInd(int index) {
 	std::cout << index << '|';
 }
 
-void	PhoneBook::displayPre(char *prenom) {
+void	PhoneBook::displayPre(std::string prenom) {
 	int	len_d;
-	len_d = 10 - strlen(prenom);
+	len_d = 10 - prenom.length();
 	if (len_d < 0) {
 		for (int i = 0; i < 9; i++)
 			std::cout << prenom[i];
@@ -64,6 +66,6 @@ void	PhoneBook::displayPre(char *prenom) {
 
 void	PhoneBook::displayContacts(Contact Repertoir[8]) {
 	displayInd(Repertoir[0].getInd());
-	displayPre(Repertoir[0].getPre());
+	displayPre(Repertoir[0].getTab(ipre));
 	std::cout << std::endl;
 }
