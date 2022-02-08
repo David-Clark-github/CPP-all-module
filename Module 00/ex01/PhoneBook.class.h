@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 14:03:16 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/08 13:08:35 by david            ###   ########.fr       */
+/*   Updated: 2022/02/08 17:41:49 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class PhoneBook {
 public:	
 
 	Contact	Repertoir[8];
-	
-	char	command[1024];
+
+	std::string	command;
 	
 	PhoneBook(void);
 	~PhoneBook(void);
@@ -37,8 +37,7 @@ public:
 	int		getExit(void)const;
 	void	displayContacts(Contact Repertoir[8]);
 	void	displayInd(int index);
-	void	displayPre(std::string prenom);
-	void	displayNom(std::string nom);
+	void	displayString(std::string str);
 
 };
 
