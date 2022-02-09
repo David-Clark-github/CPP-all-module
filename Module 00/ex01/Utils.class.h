@@ -37,8 +37,9 @@ public:
 
 	Utils(void);
 	~Utils(void);
-	int	check_cmd(std::string str)const;
-	int	check_tel(std::string tel)const;
+	int		check_cmd(std::string str)const;
+	int		check_tel(std::string tel)const;
+	bool	check_index(std::string index, int RepLen);
 
 };
 

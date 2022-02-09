@@ -49,7 +49,7 @@ void	PhoneBook::setRepLen(int r) {
 	this->_RepLen = r;
 }
 
-void	PhoneBook::displayInd(int index) {
+void	PhoneBook::displayInd(int index)const {
 	int	len = 0;
 	int	tmp = index;
 	int	len_d;
@@ -64,7 +64,7 @@ void	PhoneBook::displayInd(int index) {
 	std::cout << index << '|';
 }
 
-void	PhoneBook::displayString(std::string str) {
+void	PhoneBook::displayString(std::string str)const {
 	int	len_d;
 	len_d = 10 - str.length();
 	if (len_d < 0) {
@@ -78,7 +78,7 @@ void	PhoneBook::displayString(std::string str) {
 	}
 }
 
-void	PhoneBook::displayContacts(Contact Repertoir[8]) {
+void	PhoneBook::displayContacts(Contact Repertoir[8])const {
 	for (int i = 0; i < 8; i++) {
 		displayInd(Repertoir[i].getInd());
 		displayString(Repertoir[i].getTab(ipre));

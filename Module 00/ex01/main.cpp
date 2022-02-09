@@ -32,8 +32,12 @@ int main(int ac, char **av)
 		} else if (Utils.check_cmd(PB.command) == SEARCH) {
 			PB.displayContacts(PB.Repertoir);
 			std::cout << "Please enter an index for more information: ";
+			std::cout << "RepLen: " << PB.getRepLen() << std::endl;
 			std::getline(std::cin, PB.command);
-			std::cout << "You enter: " << PB.command << std::endl;
+			while (Utils.check_index(PB.command, PB.getRepLen())) {
+				std::cout << "Please enter a valid index: ";
+				std::getline(std::cin, PB.command);
+			}
 		}
 	}
 }
