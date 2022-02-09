@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "PhoneBook.class.h"
+#include "Utils.class.h"
 #include <iostream>
 #include <string>
 
@@ -88,12 +89,47 @@ void	PhoneBook::displayContacts(Contact Repertoir[8]) {
 }
 
 void	PhoneBook::addContact(Contact Repertoir[8], int RepLen) {
-	while (Repertoir[RepLen].getTab(ipre).compare("(vide)") == 0) {
-		std::cout << "Please enter a name: ";
-		std::getline(std::cin, this->tmp);
-		Repertoir[RepLen].setTab(this->tmp, ipre);
-		std::cout << std::endl;
+	Utils	Utils;
+	Repertoir[RepLen % 8].setInd(RepLen);
+	std::cout << "Please enter a first name: ";
+	std::getline(std::cin, this->tmp);
+	while (this->tmp.empty()) {
+			std::cout << "Please enter a non empty first name: ";
+			std::getline(std::cin, this->tmp);
 	}
-	//std::cout << "result is: " << std::endl;
-	//PhoneBook::displayContact(Repertoir);
+	Repertoir[RepLen % 8].setTab(this->tmp, ipre);
+	this->tmp = "";
+	std::cout << "Please enter a last name: ";
+	std::getline(std::cin, this->tmp);
+	while (this->tmp.empty()) {
+			std::cout << "Please enter a non empty last name: ";
+			std::getline(std::cin, this->tmp);
+	}
+	Repertoir[RepLen % 8].setTab(this->tmp, inom);
+	this->tmp = "";
+	std::cout << "Please enter a nickname: ";
+	std::getline(std::cin, this->tmp);
+	while (this->tmp.empty()) {
+			std::cout << "Please enter a non empty nickname: ";
+			std::getline(std::cin, this->tmp);
+	}
+	Repertoir[RepLen % 8].setTab(this->tmp, isur);
+	this->tmp = "";
+	std::cout << "Please enter a phone number: ";
+	std::getline(std::cin, this->tmp);
+	while (this->tmp.empty() == true || Utils.check_tel(this->tmp) == 0) {
+			std::cout << "Please enter a valid phone number: ";
+			std::getline(std::cin, this->tmp);
+	}
+	Repertoir[RepLen % 8].setTab(this->tmp, itel);
+	this->tmp = "";
+	std::cout << "Please enter a dark secret ";
+	std::getline(std::cin, this->tmp);
+	while (this->tmp.empty()) {
+			std::cout << "Please enter something ... : ";
+			std::getline(std::cin, this->tmp);
+	}
+	Repertoir[RepLen % 8].setTab(this->tmp, isec);
+	this->tmp = "";
+	PhoneBook::setRepLen(PhoneBook::getRepLen() + 1);
 }

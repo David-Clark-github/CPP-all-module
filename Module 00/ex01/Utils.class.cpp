@@ -31,3 +31,11 @@ int	Utils::check_cmd(std::string str)const {
 		return SEARCH;
 	return -1;
 }
+
+int	Utils::check_tel(std::string tel)const {
+	for (int i = 0; tel[i]; i++) {
+		if (isdigit(tel[i]) == 0)
+			return (0);
+	}
+	return 1;
+}

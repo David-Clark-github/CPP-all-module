@@ -28,7 +28,6 @@ int main(int ac, char **av)
 			std::cout << "Thanks for your time, Goog bye !\n";
 			PB.setExit(1);
 		} else if (Utils.check_cmd(PB.command) == ADD) {
-			std::cout << "ADD" << std::endl;
 			PB.addContact(PB.Repertoir, PB.getRepLen());
 		} else if (Utils.check_cmd(PB.command) == SEARCH) {
 			PB.displayContacts(PB.Repertoir);

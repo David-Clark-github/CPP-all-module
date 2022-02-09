@@ -17,6 +17,9 @@
 # include <string>
 # include <stdio.h>
 # include <string.h>
+# include <stdlib.h>
+# include <ctype.h>
+
 
 # define	ipre	0
 # define	inom	1
@@ -35,6 +38,7 @@ public:
 	Utils(void);
 	~Utils(void);
 	int	check_cmd(std::string str)const;
+	int	check_tel(std::string tel)const;
 
 };
 
