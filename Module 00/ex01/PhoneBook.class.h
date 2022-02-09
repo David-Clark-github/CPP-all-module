@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 14:03:16 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/08 17:41:49 by david            ###   ########.fr       */
+/*   Updated: 2022/02/09 13:28:25 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 # define PHONEBOOK_CLASS_H
 
 # include "Contact.class.h"
-
-# define 	EXIT	1
-# define 	ADD		2
-# define	SEARCH	3
+# include "Utils.class.h"
 
 class PhoneBook {
 	

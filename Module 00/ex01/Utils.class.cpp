@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.h                                    :+:      :+:    :+:   */
+/*   Utils.class.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 11:35:17 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/09 13:28:46 by dclark           ###   ########.fr       */
+/*   Created: 2022/02/09 13:21:43 by dclark            #+#    #+#             */
+/*   Updated: 2022/02/09 13:50:50 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_CLASS_H
-# define CONTACT_CLASS_H
+#include "Utils.class.h"
 
-# include "Utils.class.h"
+Utils::Utils(void)
+{
+	return;
+}
 
-class Contact {
+Utils::~Utils(void)
+{
+	return;
+}
 
-	std::string	tab[5];
-	int			_index;
-
-public:
-
-	Contact(void);
-	~Contact(void);
-	
-	void		setTab(std::string str, int i);
-	std::string	getTab(int i)const;
-	void		setInd(int i);
-	int			getInd(void)const;
-
-	void		SearchContact(void);
-
-};
-
-#endif
+int	Utils::check_cmd(std::string str)const {
+	if (str.compare("EXIT") == 0)
+		return EXIT;
+	else if (str.compare("ADD") == 0)
+		return ADD;
+	else if (str.compare("SEARCH") == 0)
+		return SEARCH;
+	return -1;
+}
