@@ -26,15 +26,19 @@ public:
 	Contact	Repertoir[8];
 
 	std::string	command;
+	std::string	tmp;
 	
 	PhoneBook(void);
 	~PhoneBook(void);
 	
 	void	setExit(int e);
 	int		getExit(void)const;
+	void	setRepLen(int r);
+	int		getRepLen(void)const;
 	void	displayContacts(Contact Repertoir[8]);
 	void	displayInd(int index);
 	void	displayString(std::string str);
+	void	addContact(Contact Repertoir[8], int RepLen);
 
 };
 

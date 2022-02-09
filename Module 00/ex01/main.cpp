@@ -29,6 +29,7 @@ int main(int ac, char **av)
 			PB.setExit(1);
 		} else if (Utils.check_cmd(PB.command) == ADD) {
 			std::cout << "ADD" << std::endl;
+			PB.addContact(PB.Repertoir, PB.getRepLen());
 		} else if (Utils.check_cmd(PB.command) == SEARCH) {
 			PB.displayContacts(PB.Repertoir);
 			std::cout << "Please enter an index for more information: ";

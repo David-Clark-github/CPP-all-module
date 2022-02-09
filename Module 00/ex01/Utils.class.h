@@ -18,11 +18,11 @@
 # include <stdio.h>
 # include <string.h>
 
-#define	ipre	0
-#define	inom	1
-#define	isur	2
-#define	itel	3
-#define	isec	4
+# define	ipre	0
+# define	inom	1
+# define	isur	2
+# define	itel	3
+# define	isec	4
 
 # define 	EXIT	1
 # define 	ADD		2

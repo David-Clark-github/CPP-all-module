@@ -16,8 +16,8 @@
 
 PhoneBook::PhoneBook(void)
 {
-	this->_Exit = 0;
-	this->_RepLen = 0;
+	setExit(0);
+	setRepLen(0);
 	for (int i = 0; i < 8; i++) {
 		this->Repertoir[i].setInd(0);
 		this->Repertoir[i].setTab("(vide)", ipre);
@@ -38,6 +38,14 @@ int		PhoneBook::getExit(void)const {
 
 void	PhoneBook::setExit(int e) {
 	this->_Exit = e;
+}
+
+int		PhoneBook::getRepLen(void)const {
+	return this->_RepLen;
+}
+
+void	PhoneBook::setRepLen(int r) {
+	this->_RepLen = r;
 }
 
 void	PhoneBook::displayInd(int index) {
@@ -77,4 +85,15 @@ void	PhoneBook::displayContacts(Contact Repertoir[8]) {
 		displayString(Repertoir[i].getTab(isur));
 		std::cout << std::endl;
 	}
+}
+
+void	PhoneBook::addContact(Contact Repertoir[8], int RepLen) {
+	while (Repertoir[RepLen].getTab(ipre).compare("(vide)") == 0) {
+		std::cout << "Please enter a name: ";
+		std::getline(std::cin, this->tmp);
+		Repertoir[RepLen].setTab(this->tmp, ipre);
+		std::cout << std::endl;
+	}
+	//std::cout << "result is: " << std::endl;
+	//PhoneBook::displayContact(Repertoir);
 }
