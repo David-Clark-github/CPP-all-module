@@ -36,6 +36,7 @@ public:
 	void	setRepLen(int r);
 	int		getRepLen(void)const;
 	void	displayContacts(Contact Repertoir[8])const;
+	void	displayContact(Contact c)const;
 	void	displayInd(int index)const;
 	void	displayString(std::string str)const;
 	void	addContact(Contact Repertoir[8], int RepLen);

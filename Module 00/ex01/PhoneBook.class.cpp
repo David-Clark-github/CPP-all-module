@@ -88,16 +88,25 @@ void	PhoneBook::displayContacts(Contact Repertoir[8])const {
 	}
 }
 
+void	PhoneBook::displayContact(Contact c)const {
+	std::cout << "First name: " << c.getTab(ipre) << std::endl;
+	std::cout << "Last name: " << c.getTab(inom) << std::endl;
+	std::cout << "Nickname: " << c.getTab(isur) << std::endl;
+	std::cout << "Phone number: " << c.getTab(itel) << std::endl;
+	std::cout << "Dark secrect: " << c.getTab(isec) << std::endl;
+
+}
+
 void	PhoneBook::addContact(Contact Repertoir[8], int RepLen) {
 	Utils	Utils;
-	Repertoir[RepLen % 8].setInd(RepLen);
+	Repertoir[(RepLen - 1) % 8].setInd(RepLen);
 	std::cout << "Please enter a first name: ";
 	std::getline(std::cin, this->tmp);
 	while (this->tmp.empty()) {
 			std::cout << "Please enter a non empty first name: ";
 			std::getline(std::cin, this->tmp);
 	}
-	Repertoir[RepLen % 8].setTab(this->tmp, ipre);
+	Repertoir[(RepLen - 1) % 8].setTab(this->tmp, ipre);
 	this->tmp = "";
 	std::cout << "Please enter a last name: ";
 	std::getline(std::cin, this->tmp);
@@ -105,7 +114,7 @@ void	PhoneBook::addContact(Contact Repertoir[8], int RepLen) {
 			std::cout << "Please enter a non empty last name: ";
 			std::getline(std::cin, this->tmp);
 	}
-	Repertoir[RepLen % 8].setTab(this->tmp, inom);
+	Repertoir[(RepLen - 1) % 8].setTab(this->tmp, inom);
 	this->tmp = "";
 	std::cout << "Please enter a nickname: ";
 	std::getline(std::cin, this->tmp);
@@ -113,7 +122,7 @@ void	PhoneBook::addContact(Contact Repertoir[8], int RepLen) {
 			std::cout << "Please enter a non empty nickname: ";
 			std::getline(std::cin, this->tmp);
 	}
-	Repertoir[RepLen % 8].setTab(this->tmp, isur);
+	Repertoir[(RepLen - 1) % 8].setTab(this->tmp, isur);
 	this->tmp = "";
 	std::cout << "Please enter a phone number: ";
 	std::getline(std::cin, this->tmp);
@@ -121,15 +130,14 @@ void	PhoneBook::addContact(Contact Repertoir[8], int RepLen) {
 			std::cout << "Please enter a valid phone number: ";
 			std::getline(std::cin, this->tmp);
 	}
-	Repertoir[RepLen % 8].setTab(this->tmp, itel);
+	Repertoir[(RepLen - 1) % 8].setTab(this->tmp, itel);
 	this->tmp = "";
-	std::cout << "Please enter a dark secret ";
+	std::cout << "Please enter a dark secret :";
 	std::getline(std::cin, this->tmp);
 	while (this->tmp.empty()) {
 			std::cout << "Please enter something ... : ";
 			std::getline(std::cin, this->tmp);
 	}
-	Repertoir[RepLen % 8].setTab(this->tmp, isec);
+	Repertoir[(RepLen - 1) % 8].setTab(this->tmp, isec);
 	this->tmp = "";
-	PhoneBook::setRepLen(PhoneBook::getRepLen() + 1);
 }

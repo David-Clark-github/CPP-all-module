@@ -43,14 +43,13 @@ int	Utils::check_tel(std::string tel)const {
 bool	Utils::check_index(std::string index, int RepLen) {
 	int tmp;
 	if (Utils::check_tel(index) == false) {
-		std::cout << "failed in check_index 1" << std::endl;
-		return false;
+		return true;
 	}
 	tmp = std::stoi(index);
-	std::cout << "tmp: " << tmp << std::endl;
-	if (tmp > (RepLen) || tmp < (RepLen - 9)) {
-		std::cout << "failed in check_index 2" << std::endl;
-		return false;
+	if (tmp < 1)
+		return true;
+	if (tmp > (RepLen) || tmp < (RepLen - 7)) {
+		return true;
 	}
-	return true;
+	return false;
 }

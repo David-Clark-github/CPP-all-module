@@ -23,20 +23,23 @@ int main(int ac, char **av)
 		std::cout << "Please enter a command (ADD, SEARCH or EXIT): ";
 		std::getline(std::cin, PB.command);
 		if (Utils.check_cmd(PB.command) == -1) {
-			std::cout << "Wrong command !" << std::endl;
+			;
 		} else if (Utils.check_cmd(PB.command) == EXIT) {
 			std::cout << "Thanks for your time, Goog bye !\n";
 			PB.setExit(1);
 		} else if (Utils.check_cmd(PB.command) == ADD) {
+			PB.setRepLen(PB.getRepLen() + 1);
 			PB.addContact(PB.Repertoir, PB.getRepLen());
 		} else if (Utils.check_cmd(PB.command) == SEARCH) {
 			PB.displayContacts(PB.Repertoir);
-			std::cout << "Please enter an index for more information: ";
-			std::cout << "RepLen: " << PB.getRepLen() << std::endl;
-			std::getline(std::cin, PB.command);
-			while (Utils.check_index(PB.command, PB.getRepLen())) {
-				std::cout << "Please enter a valid index: ";
+			if (PB.getRepLen() != 0) {
+				std::cout << "Please enter an index for more information: ";
 				std::getline(std::cin, PB.command);
+				while (Utils.check_index(PB.command, PB.getRepLen())) {
+					std::cout << "Please enter a valid index: ";
+					std::getline(std::cin, PB.command);
+				}
+				PB.displayContact(PB.Repertoir[(std::stoi(PB.command) - 1) % 8]);
 			}
 		}
 	}
