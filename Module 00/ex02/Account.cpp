@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: david <dclark@student.42.fr>               +#+  +:+       +#+        */
+/*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/10 15:44:06 by david             #+#    #+#             */
-/*   Updated: 2022/02/10 15:50:37 by david            ###   ########.fr       */
+/*   Created: 2022/02/11 14:05:05 by dclark            #+#    #+#             */
+/*   Updated: 2022/02/11 14:05:08 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,17 @@ Account::~Account(void) {
 }
 
 int Account::getNbAccounts(void) {
-    return Account::_totalAmount;
+    return Account::_nbAccounts;
 }
 
 int Account::getTotalAmount(void) {
-    return _totalAmount;
+    return Account::_totalAmount;
 }
 
 int Account::getNbDeposits(void) {
-    return _totalNbDeposits;
+    return Account::_totalNbDeposits;
 }
 
 int Account::getNbWithdrawals(void) {
-    return _totalNbWithdrawals;
+    return Account::_totalNbWithdrawals;
 }
