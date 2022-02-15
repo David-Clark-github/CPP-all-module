@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.h                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 12:39:38 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/15 13:50:10 by dclark           ###   ########.fr       */
+/*   Created: 2022/02/15 13:25:46 by dclark            #+#    #+#             */
+/*   Updated: 2022/02/15 13:50:09 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
+#include "Zombie.h"
 
-#include <iostream>
+Zombie::Zombie(std::string name)
+{
+	this->_name = name;
+	return;
+}
 
-class Zombie {
-	public:
-		Zombie(std::string name);
-		~Zombie(void);
-		void	announce(void)const;
-	private:
-		std::string	_name;
-};
+Zombie::~Zombie(void)
+{
+	std::cout << this->_name << " destructeur called "<< std::endl;
+	return;
+}
 
-void	randomChump(std::string name);
-Zombie	*newZombie(std::string name);
-
-#endif
+void	Zombie::announce(void)const {
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	return;
+}
