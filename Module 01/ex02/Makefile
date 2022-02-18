@@ -11,13 +11,10 @@
 # **************************************************************************** #
 
 SRCS	=	main.cpp \
-			ZombieHorde.cpp \
-			Zombie.cpp
-
 
 HEADER	= ./
 
-NAME	= "Encore_plus_de_cerveaux!"
+NAME	= "Bonjour_ici_le_cerveau"
 
 CFLAGS	+= -Wall -Werror -Wextra -I $(HEADER) -std=c++98
 
