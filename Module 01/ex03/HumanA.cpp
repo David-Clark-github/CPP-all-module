@@ -6,8 +6,43 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 14:27:10 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/18 14:27:13 by dclark           ###   ########.fr       */
+/*   Updated: 2022/02/19 21:43:09 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Weapon.h"
+#include "HumanA.h"
+#include <string>
+#include <iostream>
 
+HumanA::HumanA(std::string name, Weapon& type)
+{
+	setType(type);
+	setName(name);
+	return;
+}
+
+HumanA::~HumanA(void)
+{
+	return;
+}
+
+void	HumanA::setName(std::string name) {
+	this->_name = name;
+}
+
+std::string	HumanA::getName(void)const {
+	return this->_name;
+}
+
+void	HumanA::setType(Weapon& type) {
+	this->_type = &type;
+}
+
+std::string HumanA::getType(void)const {
+	return this->_type->getType();
+}
+
+void	HumanA::attack(void) {
+	std::cout << getName() << " attacks with their " << getType() << std::endl;
+}
