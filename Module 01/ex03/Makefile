@@ -6,11 +6,14 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/02/18 14:25:54 by dclark           ###   ########.fr        #
+#    Updated: 2022/02/20 15:06:11 by david            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	=	main.cpp \
+			HumanA.cpp \
+			HumanB.cpp \
+			Weapon.cpp
 
 HEADER	= ./
 
