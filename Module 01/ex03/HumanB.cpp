@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 14:27:10 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/18 14:27:40 by dclark           ###   ########.fr       */
+/*   Updated: 2022/02/20 15:21:10 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 #include <string>
 #include <iostream>
 
-HumanB::HumanB(std::string name) {
-    setName(name);
+HumanB::HumanB(std::string name)
+:_name(name)
+{
     return;
 }
 

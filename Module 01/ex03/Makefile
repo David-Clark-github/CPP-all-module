@@ -17,7 +17,7 @@ SRCS	=	main.cpp \
 
 HEADER	= ./
 
-NAME	= "Violence_inutile"
+NAME	= Violence_inutile
 
 CFLAGS	+= -Wall -Werror -Wextra -I $(HEADER) -std=c++98
 

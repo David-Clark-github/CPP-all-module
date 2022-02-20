@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 14:27:10 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/19 21:43:09 by david            ###   ########.fr       */
+/*   Updated: 2022/02/20 15:20:24 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 #include <iostream>
 
 HumanA::HumanA(std::string name, Weapon& type)
+:_name(name)
 {
 	setType(type);
-	setName(name);
 	return;
 }
 
