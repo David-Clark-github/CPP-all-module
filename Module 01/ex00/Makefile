@@ -6,7 +6,7 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/02/15 14:48:02 by dclark           ###   ########.fr        #
+#    Updated: 2022/02/20 15:10:11 by david            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ fclean:	clean
 	rm -f $(NAME)
 
 re:		fclean
-	@make
+	make
 
 $(NAME):	$(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
