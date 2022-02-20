@@ -10,13 +10,12 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	main.cpp \
-			#mettre les fichiers .cpp suivi dans [\] si les uns sur les autres
+SRCS	=	main.cpp
 
 
 HEADER	= ./
 
-NAME	= #mettre le nom de l'executable
+NAME	= sed_c_est_pour_les_nuls
 
 CFLAGS	+= -Wall -Werror -Wextra -I $(HEADER) -std=c++98
 
