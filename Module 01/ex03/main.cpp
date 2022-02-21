@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 14:26:42 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/19 21:52:24 by david            ###   ########.fr       */
+/*   Updated: 2022/02/21 10:56:32 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,4 @@ int main() {
 	jim.attack();
 	club2.setType("some other type of club");
 	jim.attack();
-
 }
