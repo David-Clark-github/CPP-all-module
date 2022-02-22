@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 14:23:49 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/22 14:23:51 by dclark           ###   ########.fr       */
+/*   Updated: 2022/02/22 17:33:13 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Sample {
 		Sample(Sample const & src);						// Canonicale
 		~Sample(void);									// Canonicale
 
-		Sample	&	operator=(Sample const & rhs);		// Canonicale
+		Sample	&	operator=(const Sample & rhs);		// Canonicale
 
 		int		getFoo(void)const;
 	
