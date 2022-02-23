@@ -6,13 +6,13 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:10:01 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/22 13:10:05 by dclark           ###   ########.fr       */
+/*   Updated: 2022/02/23 14:48:50 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.h"
 
-Fixed::Fixed(void):_binary(0) {
+Fixed::Fixed(void):_value(0) {
     std::cout << "Default Constructor called" << std::endl;
     return;
 }
@@ -30,17 +30,17 @@ Fixed::~Fixed(void) {
 Fixed   &Fixed::operator=(const Fixed &f) {
     std::cout << "Assignement operator called" << std::endl;
     if (this != &f) {
-        this->_binary = f.getRawBits();
+		Fixed::_value = f.getRawBits();
     }
     return *this;
 }
 
 int    Fixed::getRawBits(void)const {
     std::cout << "getRawBits member function called" << std::endl;
-    return this->_binary;
+    return this->_value;
 }
 
 void    Fixed::setRawBits(const int raw) {
-    this->_binary = raw;
+    this->_value = raw;
     return;
 }

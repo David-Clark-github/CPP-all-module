@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:10:16 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/22 17:50:34 by dclark           ###   ########.fr       */
+/*   Updated: 2022/02/23 14:48:51 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class Fixed {
 		int		getRawBits(void)const;
 		void	setRawBits(const int raw);
 	private:
-		static const int	_width = 8;
-		int					_binary; //Combien de bit est a fraction ? 0 = [00000000] \===/ 2 = [000000.00]
+		int					_value;
+		static const int	_binary = 8; // Il y a 8 bit de "fraction"
 	
 };
 
