@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 14:34:17 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/22 17:33:18 by dclark           ###   ########.fr       */
+/*   Updated: 2022/02/23 13:03:59 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Sample::Sample(int const n):_foo(n) {
 
 Sample::Sample(Sample const & src) {
     std::cout << "Copy constructor called" << std::endl;
-    *this = src; // -->Assignement<-- :-)//
+    *this = src; /*<== Assignement */
     return;
 }
 

@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 14:23:49 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/22 17:33:13 by dclark           ###   ########.fr       */
+/*   Updated: 2022/02/23 13:04:02 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ class Sample {
 	public:
 		Sample(void);									// Canonicale
 		Sample(int const n);
-		Sample(Sample const & src);						// Canonicale
+		Sample(const Sample &src);						// Canonicale
 		~Sample(void);									// Canonicale
 
-		Sample	&	operator=(const Sample & rhs);		// Canonicale
+		Sample	&	operator=(const Sample &rhs);		// Canonicale
 
 		int		getFoo(void)const;
 	
