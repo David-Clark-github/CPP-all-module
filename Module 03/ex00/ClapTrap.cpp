@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 13:09:43 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/25 14:29:37 by dclark           ###   ########.fr       */
+/*   Created: 2022/02/25 14:53:53 by dclark            #+#    #+#             */
+/*   Updated: 2022/02/25 14:58:49 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.h"
+#include "ClapTrap.h"
 
-int main(void) {
-    Fixed a;
-	Fixed const b(10);
-	Fixed const c(42.42f);
-	Fixed const d(b);
-
-	std::cout << "c.toInt: " << c.toInt() << std::endl;
-	return 0;
+ClapTrap::ClapTrap(void):_Name("default"), _Hit_points(10), _Energy_points(10), _Attack_dammage(0) {
+	std::cout << "Default Constructor called" << std::endl;
+	return;
 }

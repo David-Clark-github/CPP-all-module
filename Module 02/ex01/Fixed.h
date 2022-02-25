@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:10:16 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/23 15:14:04 by dclark           ###   ########.fr       */
+/*   Updated: 2022/02/25 14:44:51 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Fixed {
 	private:
 		int					_value;
 		static const int	_binary = 8;	
+		float				_fixed_point_val;
 };
 
 #endif
