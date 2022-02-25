@@ -6,11 +6,12 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/02/25 14:46:41 by dclark           ###   ########.fr        #
+#    Updated: 2022/02/25 16:05:20 by dclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	=	main.cpp \
+			ClapTrap.cpp
 
 
 HEADER	= ./
