@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 14:53:53 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/25 18:12:44 by david            ###   ########.fr       */
+/*   Updated: 2022/02/27 19:04:14 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,36 +20,106 @@ ClapTrap::ClapTrap(void):_Name("default") {
 
 //Name Constructor
 ClapTrap::ClapTrap(std::string Name) {
-	std::cout << "Constructor called with a name" << std::endl;
 	setName(Name);
+	std::cout << "Constructor called with: " << Name << std::endl;
 	return;
 }
 
 //Copy Constructor
 ClapTrap::ClapTrap(const ClapTrap &c) {
-	std::cout << "Copy Constructor called" << std:endl;
 	*this = c;
+	std::cout << "Copy Constructor called" << std::endl;
 	return;
 }
 
 //Destructor
 ClapTrap::~ClapTrap(void) {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Destructor " << getName() << " called" << std::endl;
 	return;
 }
 
 //Operator[=]
 ClapTrap &ClapTrap::operator=(const ClapTrap &c) {
+	std::cout << "Assignement operator called" << std::endl;
 	if (this != &c) {
 		setName(c.getName());
-		this->_Hit_points = c._Hit_points;
-		this->_Energy_points = c._Energy_points;
-		this->_Attack_dammage = c._Attack_dammage;
+		setHitPoints(c.getHitPoints());
+		setEnergy(c.getEnergy());
+		setAttackD(c.getAttackD());
 	}
 	return *this;
 }
 
 //Attack fonction with a target
 void	ClapTrap::attack(const std::string &target) {
-	target->takeDammage(this->_Attack_dammage);
+	if (getEnergy() > 0 && getHitPoints() > 0) {
+	std::cout << "ClapTrap " << getName() << " attacks " << target << ", causing " << getAttackD() << " points of damage!" << std::endl;
+	setEnergy(getEnergy() - 1);
+	} else {
+		std::cout << "No more Energy or Hit Points to do actions" << std::endl;
+	}
+	return;
+}
+
+//Dammage recieve
+void	ClapTrap::takeDammage(unsigned int amount) {
+	std::cout << getName() << " has recieve " << amount << " dammage(s) !" << std::endl;
+	setHitPoints(getHitPoints() - amount);
+	return;
+}
+
+//Repair HitPoints by minimalyse Energy
+void	ClapTrap::beRepair(unsigned int amount) {
+	if (getEnergy() > 0 && getHitPoints() > 0) {
+		std::cout << "ClapTrap " << getName() << " has receive " << amount << "Hit Point(s) back !" << std::endl;
+		setHitPoints(getHitPoints() + amount);
+		setEnergy(getEnergy() - 1);
+	} else {
+		std::cout << "No more Energy or Hit Points to do actions" << std::endl;
+	}
+	return;
+}
+
+//set _Name
+void	ClapTrap::setName(std::string name) {
+	this->_Name = name;
+	return;
+}
+
+// get _Name
+std::string	ClapTrap::getName(void)const {
+	return this->_Name;
+}
+
+//set _Hit_points
+void	ClapTrap::setHitPoints(int amount) {
+	this->_Hit_points = amount;
+	return;
+}
+
+//get _Hit_points
+int	ClapTrap::getHitPoints(void)const {
+	return this->_Hit_points;
+}
+
+//set _Energy_points
+void	ClapTrap::setEnergy(int amount) {
+	this->_Energy_points = amount;
+	return;
+}
+
+//get _Energy_points
+int	ClapTrap::getEnergy(void)const {
+	return this->_Energy_points;
+}
+
+//set _Attack_dammage
+void	ClapTrap::setAttackD(unsigned int amount) {
+	this->_Attack_dammage = amount;
+	return;
+}
+
+//get _Attack_dammage
+unsigned int	ClapTrap::getAttackD(void)const {
+	return this->_Attack_dammage;
 }
