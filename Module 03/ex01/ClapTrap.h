@@ -6,7 +6,7 @@
 /*   By: dclark <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 14:47:02 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/27 18:05:53 by david            ###   ########.fr       */
+/*   Updated: 2022/02/28 17:50:18 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ class ClapTrap {
 
 	private:
 		std::string		_Name;
-		int				_Hit_points = 10;
-		int				_Energy_points = 10;
-		unsigned int	_Attack_dammage = 0;
+		int				_Hit_points;
+		int				_Energy_points;
+		unsigned int	_Attack_dammage;
 };
 
 #endif

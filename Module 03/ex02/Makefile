@@ -6,18 +6,18 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/02/28 15:19:40 by dclark           ###   ########.fr        #
+#    Updated: 2022/02/28 16:12:42 by dclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	=	main.cpp \
 			ClapTrap.cpp \
-			ScavTrap.cpp
+			FragTrap.cpp
 
 
 HEADER	= ./
 
-NAME	= Serena,mon_amour
+NAME	= Travail_à_la_chaine
 
 CFLAGS	+= -Wall -Werror -Wextra -I $(HEADER) -std=c++98
 

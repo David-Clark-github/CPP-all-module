@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/25 16:04:29 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/28 17:57:27 by dclark           ###   ########.fr       */
+/*   Created: 2022/02/28 14:39:59 by dclark            #+#    #+#             */
+/*   Updated: 2022/02/28 17:49:52 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAGTRAP_H
+# define FRAGTRAP_H
+
 #include "ClapTrap.h"
-#include "ScavTrap.h"
 
-int main(void) {
-	ScavTrap	def;
-	ScavTrap	s("Shield");
-	ScavTrap	trap(s);
+class FragTrap : public ClapTrap {
+	public:
+		FragTrap();
+		FragTrap(std::string name);
+		FragTrap(const FragTrap &s);
+		FragTrap	&operator=(const FragTrap &s);
+		~FragTrap();
 
-	ScavTrap	test = ScavTrap("test");
+		void	highFivesGuyes(void);
 
-	test.guardGate();
-	def.guardGate();
-	trap.attack(def.getName());
+	private:
 
-	return 0;
-}	
+};
+
+#endif

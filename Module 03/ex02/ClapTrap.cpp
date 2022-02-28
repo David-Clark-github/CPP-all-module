@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 14:53:53 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/28 17:55:29 by dclark           ###   ########.fr       */
+/*   Updated: 2022/02/28 18:09:41 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,41 +14,40 @@
 
 //Default Constructor
 ClapTrap::ClapTrap(void):	_Name("default"),
-							_Hit_points(10),
-							_Energy_points(10),
-							_Attack_dammage(0)
+							_Hit_points(100),
+							_Energy_points(100),
+							_Attack_dammage(30)
 {
-	std::cout << "Default Constructor called" << std::endl;
+	std::cout << "Default ClapTrap Constructor called" << std::endl;
 	return;
 }
 
 //Name Constructor
-ClapTrap::ClapTrap(std::string Name):	_Hit_points(10),
-										_Energy_points(10),
-										_Attack_dammage(0)
+ClapTrap::ClapTrap(std::string Name):	_Hit_points(100),
+										_Energy_points(100),
+										_Attack_dammage(30)
 {
 	setName(Name);
-	std::cout << "Constructor called with: " << Name << std::endl;
+	std::cout << "Constructor ClapTrap called with: " << Name << std::endl;
 	return;
 }
 
 //Copy Constructor
-ClapTrap::ClapTrap(const ClapTrap &c)
-{
+ClapTrap::ClapTrap(const ClapTrap &c) {
 	*this = c;
-	std::cout << "Copy Constructor called" << std::endl;
+	std::cout << "Copy ClapTrap Constructor called" << std::endl;
 	return;
 }
 
 //Destructor
 ClapTrap::~ClapTrap(void) {
-	std::cout << "Destructor " << getName() << " called" << std::endl;
+	std::cout << "ClapTrap Destructor " << getName() << " called" << std::endl;
 	return;
 }
 
 //Operator[=]
 ClapTrap &ClapTrap::operator=(const ClapTrap &c) {
-	std::cout << "Assignement operator called" << std::endl;
+	std::cout << "Assignement ClapTrap operator called" << std::endl;
 	if (this != &c) {
 		setName(c.getName());
 		setHitPoints(c.getHitPoints());

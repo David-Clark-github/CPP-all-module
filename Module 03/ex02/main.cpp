@@ -6,23 +6,22 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 16:04:29 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/28 17:57:27 by dclark           ###   ########.fr       */
+/*   Updated: 2022/02/28 18:11:36 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.h"
-#include "ScavTrap.h"
+#include "FragTrap.h"
 
 int main(void) {
-	ScavTrap	def;
-	ScavTrap	s("Shield");
-	ScavTrap	trap(s);
+	FragTrap	def;
+	FragTrap	s("Shield");
+	FragTrap	trap(s);
 
-	ScavTrap	test = ScavTrap("test");
-
-	test.guardGate();
-	def.guardGate();
-	trap.attack(def.getName());
+	FragTrap	test = FragTrap("Test");
+	def.attack(s.getName());
+	def.takeDammage(s.getAttackD());
+	test.highFivesGuyes();
 
 	return 0;
 }	
