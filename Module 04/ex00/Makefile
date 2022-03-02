@@ -6,13 +6,15 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/03/02 16:13:02 by dclark           ###   ########.fr        #
+#    Updated: 2022/03/02 17:47:31 by dclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	=	Animal.cpp \
+			WrongAnimal.cpp \
 			Dog.cpp \
 			Cat.cpp \
+			WrongCat.cpp \
 			main.cpp
 
 

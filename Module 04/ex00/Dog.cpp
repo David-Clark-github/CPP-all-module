@@ -6,14 +6,14 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:37:20 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/02 16:49:16 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/02 17:56:27 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.h"
 
 Dog::Dog(void) {
-	Dog::type = "Dog";
+	setType("Dog");
 	std::cout << "Default Dog Constructor called" << std::endl;
 	return;
 }

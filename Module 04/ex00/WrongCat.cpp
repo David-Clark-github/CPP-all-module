@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:37:20 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/02 17:56:02 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/02 17:59:06 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.h"
-#include "Animal.h"
+#include "WrongAnimal.h"
+#include "WrongCat.h"
 
-Cat::Cat(void) {
-	setType("Cat");
-	std::cout << "Default Cat Constructor called" << std::endl;
+WrongCat::WrongCat(void) {
+	setType("WrongCat");
+	std::cout << "Default WrongCat Constructor called" << std::endl;
 	return;
 }
 
-Cat::Cat(const Cat& c) {
-	std::cout << "Copy Cat Constructor called" << std::endl;
-	*this = c;
+WrongCat::WrongCat(const WrongCat& wc) {
+	std::cout << "Copy WrongCat Constructor called" << std::endl;
+	*this = wc;
 }
 
-Cat&	Cat::operator=(const Cat& c) {
-	std::cout << "Assignement Cat oeprator = called" << std::endl;
-	if (this != &c) {
-		this->type = c.type;
+WrongCat&	WrongCat::operator=(const WrongCat& wc) {
+	std::cout << "Assignement WrongCat oeprator = called" << std::endl;
+	if (this != &wc) {
+		this->type = wc.type;
 	}
 	return *this;
 }
 
-Cat::~Cat(void) {
-	std::cout << "Desctructor Cat called" << std::endl;	
+WrongCat::~WrongCat(void) {
+	std::cout << "Desctructor WrongCat called" << std::endl;	
 	return;
 }
 
-void	Cat::makeSound(void)const {
-	std::cout << "Miaou!" << std::endl;
+void	WrongCat::makeSound(void)const {
+	std::cout << "*WrongMiaou* :(" << std::endl;
 	return;
 }
