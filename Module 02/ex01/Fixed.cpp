@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:10:01 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/25 14:44:48 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/04 16:45:48 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Fixed::Fixed(const int value):_fixed_point_val(0) {
 
 Fixed::Fixed(const float value):_fixed_point_val(0) {
 	std::cout << "Float Constructor called" << std::endl;
-	setRawBits((int)value);
+	setRawBits(value);
 	return;
 }
 
@@ -48,7 +48,6 @@ Fixed	&Fixed::operator=(const Fixed &f) {
 }
 
 int	Fixed::getRawBits(void)const {
-    std::cout << "getRawBits member function called" << std::endl;
     return this->_value;
 }
 
@@ -58,13 +57,38 @@ void	Fixed::setRawBits(const int raw) {
 }
 
 int	Fixed::toInt(void)const {
-	for (int i = 0; i < 8; i++) {
-		this->_fixed_point_val += getRawBits() >> i / i;
-	}
-
+	return (int)roundf(getRawBits());
 }
 
 float	Fixed::toFloat(void)const {
-	std::cout << "toFloat function called" << std::endl;
-	return -42.0f;
+	return (float)getRawBits();
 }
+
+void	Fixed::setTabBit(void) {
+	setValLong(4294967296 / 2);
+	int	val = getRawBits();
+	for (int index = 0; getValLong() > 0; index++) {
+		if (getValLong() <= val) {
+			val -= getValLong();
+			_tabBit[index] = 1;
+		} else {
+			_tabBit[index] = 0;
+		}
+		setValLong(getValLong() / 2);
+	}
+	for (int i = 0; i < 32; i++) {
+		std::cout << _tabBit[i];
+	}
+	std::cout << std::endl;
+}
+
+long long	Fixed::getValLong(void)const {
+	return this->_val_long;
+}
+
+void	Fixed::setValLong(long long val) {
+	this->_val_long = val;
+	return;
+}
+
+
