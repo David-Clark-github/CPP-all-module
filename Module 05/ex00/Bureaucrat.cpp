@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 17:36:57 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/04 18:08:06 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/04 18:41:47 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@ Bureaucrat::Bureaucrat(void) {
 	setName("Null");
 	setGrade(150);
 	return;
+}
+
+Bureaucrat::Bureaucrat(std::string name, int grade) {
+	setName(name);
+	setGrade(grade);
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& b) {
@@ -54,13 +59,27 @@ int	Bureaucrat::getGrade(void)const {
 }
 
 void	Bureaucrat::increGrade(const int val) {
-	// -- le grade de x a 1
-	// attention de ne pas mettre le grade en dessous de 1
+	try {
+		if ((getGrade() - val) < 1) {
+			throw std::exception();
+		} else {
+			setGrade(getGrade() - val);
+		}
+	} catch (std::exception e) {
+		std::cout << "Le grade du Bureaucrat ne peut être supertieur a 1" << std::endl;
+	}
 }
 
 void	Bureaucrat::decreGrade(const int val) {
-	//++ le grade de x a 150
-	// attention de ne pas mettre le grade au dela de 150
+	try {
+		if ((getGrade() + val) >150) {
+			throw std::exception();
+		} else {
+			setGrade(getGrade() + val);
+		}
+	} catch (std::exception e) {
+		std::cout << "Le grade du Bureaucrat ne peut être inferieur a 150" << std::endl;
+	}
 }
 
 std::ostream& operator<<(std::ostream& o, const Bureaucrat& b) {

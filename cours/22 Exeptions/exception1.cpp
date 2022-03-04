@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 18:15:05 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/04 18:32:52 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/04 18:35:39 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	test1() {
 	try {
 		//Do some stuff here
 		if (/* there's an error*/) {
-			throw std::exception;
+			throw std::exception();
 		} else {
 			//Do some more stuff
 		}
