@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 16:11:51 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/03 15:14:05 by david            ###   ########.fr       */
+/*   Updated: 2022/03/04 11:42:28 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,26 @@
 #include "WrongCat.h"
 #include "Cat.h"
 #include "Dog.h"
+#include <iostream>
+#include <string>
+
 int main()
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	delete j;//should not create a leak
-	delete i;
+	Animal	*tab[4];
+	for (int i = 0; i < 4; i++) {
+		if (i < (4 / 2)) {
+			tab[i] = new Dog();
+		} else {
+			tab[i] = new Cat();
+		}
+	}
+	for (int i = 0; i < 4; i++) {
+		std::cout << "The Animal " << tab[i]->getType() << " do: ";
+		tab[i]->makeSound();
+	}
+	//tab[2]->makeSound();
+	for (int i = 0; i < 4; i++) {
+		delete tab[i];
+	}
 	return 0;
 }

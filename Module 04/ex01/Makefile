@@ -6,7 +6,7 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/03/03 15:18:08 by david            ###   ########.fr        #
+#    Updated: 2022/03/04 11:42:08 by dclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ HEADER	= ./
 
 NAME	= I_dont_want_to_see_the_world_on_fire
 
-CFLAGS	+= -Wall -Werror -Wextra -I $(HEADER) -std=c++98 -g #-fsanitize=address
+CFLAGS	+= -Wall -Werror -Wextra -I $(HEADER) -std=c++98 # -g -fsanitize=address
 
 OBJS	= $(SRCS:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:37:20 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/03 15:17:19 by david            ###   ########.fr       */
+/*   Updated: 2022/03/04 11:34:25 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 Dog::Dog(void) {
 	setType("Dog");
-	initBrain();
 	std::cout << "Default Dog Constructor called" << std::endl;
+	initBrain();
 	return;
 }
 
@@ -34,8 +34,8 @@ Dog&	Dog::operator=(const Dog& d) {
 }
 
 Dog::~Dog(void) {
-	std::cout << "Desctructor Dog called" << std::endl;	
 	deleteBrain();
+	std::cout << "Desctructor Dog called" << std::endl;	
 	return;
 }
 

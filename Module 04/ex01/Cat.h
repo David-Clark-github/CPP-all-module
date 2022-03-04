@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:20:19 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/03 14:30:45 by david            ###   ########.fr       */
+/*   Updated: 2022/03/04 11:33:04 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Cat : public Animal {
 		Cat();
 		Cat(const Cat& c);
 		Cat&	operator=(const Cat& c);
-		~Cat();
+		virtual ~Cat();
 		virtual void	makeSound(void)const;
 		void			initBrain(void);
 		void			deleteBrain(void);

@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:37:20 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/03 15:11:58 by david            ###   ########.fr       */
+/*   Updated: 2022/03/04 11:34:35 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 Cat::Cat(void) {
 	setType("Cat");
-	initBrain();
 	std::cout << "Default Cat Constructor called" << std::endl;
+	initBrain();
 	return;
 }
 
@@ -36,8 +36,8 @@ Cat&	Cat::operator=(const Cat& c) {
 }
 
 Cat::~Cat(void) {
-	std::cout << "Desctructor Cat called" << std::endl;	
 	deleteBrain();
+	std::cout << "Desctructor Cat called" << std::endl;	
 	return;
 }
 

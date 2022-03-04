@@ -6,14 +6,14 @@
 /*   By: david <dclark@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:56:22 by david             #+#    #+#             */
-/*   Updated: 2022/03/03 15:02:07 by david            ###   ########.fr       */
+/*   Updated: 2022/03/04 11:36:03 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.h"
 
 Brain::Brain(void) {
-	std::cout << "Brain default Constructor" << std::endl;
+	std::cout << "Default Brain Constructor" << std::endl;
 	return;
 }
 
@@ -33,5 +33,6 @@ Brain&	Brain::operator=(const Brain& b){
 }
 
 Brain::~Brain(void) {
+	std::cout << "Destructor Brain called" << std::endl;
 	return;
 }
