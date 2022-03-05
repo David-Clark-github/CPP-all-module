@@ -6,12 +6,12 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/03/04 18:44:46 by dclark           ###   ########.fr        #
+#    Updated: 2022/03/05 16:33:38 by dclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	=	main.cpp \
-			Bureaucrate.cpp
+			Bureaucrat.cpp
 
 HEADER	= ./
 

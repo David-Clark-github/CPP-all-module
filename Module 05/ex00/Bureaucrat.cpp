@@ -6,14 +6,14 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 17:36:57 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/04 18:41:47 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/05 16:27:04 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.h"
 
 Bureaucrat::Bureaucrat(void) {
-	setName("Null");
+	setName((std::string)"Null");
 	setGrade(150);
 	return;
 }
@@ -50,6 +50,23 @@ std::string	Bureaucrat::getName(void)const {
 }
 
 void	Bureaucrat::setGrade(const int grade) {
+	try {
+		if (grade > 150) {
+			throw Bureaucrat::GradeTooLowException();
+		} else if (grade < 1) {
+			throw Bureaucrat::GradeTooHighException();
+		}
+	} catch (Bureaucrat::GradeTooLowException& e) {
+		std::cout << e.what() << std::endl;
+		std::cout << "The grade will be set to 150" << std::endl;
+		this->_grade = 150;
+		return;
+	} catch (Bureaucrat::GradeTooHighException& e) {
+		std::cout << e.what() << std::endl;
+		std::cout << "The grade will be set to 1" << std::endl;
+		this->_grade = 1;
+		return;
+	}
 	this->_grade = grade;
 	return;
 }
@@ -59,30 +76,14 @@ int	Bureaucrat::getGrade(void)const {
 }
 
 void	Bureaucrat::increGrade(const int val) {
-	try {
-		if ((getGrade() - val) < 1) {
-			throw std::exception();
-		} else {
-			setGrade(getGrade() - val);
-		}
-	} catch (std::exception e) {
-		std::cout << "Le grade du Bureaucrat ne peut être supertieur a 1" << std::endl;
-	}
+	setGrade(getGrade() - val);
 }
 
 void	Bureaucrat::decreGrade(const int val) {
-	try {
-		if ((getGrade() + val) >150) {
-			throw std::exception();
-		} else {
-			setGrade(getGrade() + val);
-		}
-	} catch (std::exception e) {
-		std::cout << "Le grade du Bureaucrat ne peut être inferieur a 150" << std::endl;
-	}
+	setGrade(getGrade() + val);
 }
 
-std::ostream& operator<<(std::ostream& o, const Bureaucrat& b) {
-	o << b.getName() << ", bureaucrat grade " << n.getGrade();
-	return;
+std::ostream &	operator<<(std::ostream & o, const Bureaucrat & b) {
+	o << b.getName() << ", bureaucrat grade " << b.getGrade();
+	return o;
 }
