@@ -83,6 +83,18 @@ void	Bureaucrat::decreGrade(const int val) {
 	setGrade(getGrade() + val);
 }
 
+void	Bureaucrat::signeForm(Form& f) {
+	try {
+		if (f.getFormSigne() == 1) {
+			std::cout << getName() << " signed " << f.getName() << std::endl;
+		} else {
+			throw GradeTooLowException();
+		}
+	}  catch (std::exception& e) {
+		std::cout << getName() << " couldn’t sign " << f.getName() << " because " << e.what() << std::endl;
+	}
+}
+
 std::ostream &	operator<<(std::ostream & o, const Bureaucrat & b) {
 	o << b.getName() << ", bureaucrat grade " << b.getGrade();
 	return o;
