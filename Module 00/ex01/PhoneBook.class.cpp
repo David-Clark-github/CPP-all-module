@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 13:46:16 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/08 18:11:08 by david            ###   ########.fr       */
+/*   Updated: 2022/03/22 18:47:17 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,8 +102,8 @@ void	PhoneBook::addContact(Contact Repertoir[8], int RepLen) {
 	Repertoir[(RepLen - 1) % 8].setInd(RepLen);
 	std::cout << "Please enter a first name: ";
 	std::getline(std::cin, this->tmp);
-	while (this->tmp.empty()) {
-			std::cout << "Please enter a non empty first name: ";
+	while (this->tmp.empty() || Utils.strIsAlpha(this->tmp) == false) {
+			std::cout << "Please enter a valid first name: ";
 			std::getline(std::cin, this->tmp);
 	}
 	Repertoir[(RepLen - 1) % 8].setTab(this->tmp, ipre);

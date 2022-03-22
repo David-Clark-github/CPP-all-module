@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:21:43 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/09 13:50:50 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/22 18:48:34 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ bool	Utils::check_index(std::string index, int RepLen) {
 	if (Utils::check_tel(index) == false) {
 		return true;
 	}
+	if (index.std::lengths() > 8)
+	{
+		std::cout << "The index is incorect, please enter a correct index" << std::endl;
+		while (index.std::length() > 8)
+	}
 	tmp = std::stoi(index);
 	if (tmp < 1)
 		return true;
@@ -52,4 +57,14 @@ bool	Utils::check_index(std::string index, int RepLen) {
 		return true;
 	}
 	return false;
+}
+
+bool	Utils::strIsAlpha(const std::string str)
+{
+	for (int i = 0; str[i]; i++)
+	{
+		if (std::isalpha(str[i]) == false)
+			return false;
+	}
+	return true;
 }
