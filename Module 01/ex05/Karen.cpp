@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 13:08:56 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/21 13:08:57 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/23 15:39:22 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Karen::~Karen(void)
 
 void    Karen::complain(std::string level) {
     Karen   K;
-    void    (Karen::*f)(void);
+	void    (Karen::*f)(void);
     switch (std::stoi(level))
     {
        case 1:
