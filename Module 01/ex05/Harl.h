@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 13:04:12 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/23 15:13:51 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/23 17:22:31 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 #include <string>
 #include <iostream>
 
-#define DEBUG	"0"
-#define INFO	"1"
-#define WARNING	"2"
-#define ERROR	"3"
+#define DEBUG	"1"
+#define INFO	"2"
+#define WARNING	"3"
+#define ERROR	"4"
 
 class Harl {
 	public:

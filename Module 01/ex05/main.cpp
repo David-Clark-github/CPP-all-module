@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 15:10:59 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/23 15:10:42 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/23 17:32:25 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int main(void) {
     Harl H;
 	
-	H.complain("toto");
+	H.complain("0");
     H.complain(DEBUG);
     H.complain(INFO);
     H.complain(WARNING);
