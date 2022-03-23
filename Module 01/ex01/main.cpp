@@ -6,15 +6,17 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:56:33 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/15 14:56:34 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/23 13:18:08 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.h"
 
+#define N 5
+
 int main() {
-    Zombie  *Ztab = zombieHorde(5, "Toto");
-    for (int i = 0; i < 5; i++) {
+    Zombie  *Ztab = zombieHorde(N, "Toto");
+    for (int i = 0; i < N; i++) {
         Ztab[i].announce();
     }
     delete [] Ztab;
