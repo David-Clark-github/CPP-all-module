@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.h                                            :+:      :+:    :+:   */
+/*   Harl.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 13:04:12 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/21 13:04:13 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/23 17:22:31 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KAREN_H
-# define KAREN_H
+#ifndef HARL_H
+# define HARL_H
 
 #include <string>
+#include <iostream>
 
-class Karen {
+#define DEBUG	"1"
+#define INFO	"2"
+#define WARNING	"3"
+#define ERROR	"4"
+
+class Harl {
 	public:
-		Karen();
-		~Karen();
+		Harl();
+		~Harl();
 		void	complain(std::string level);
 
 	private:

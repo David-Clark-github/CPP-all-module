@@ -6,7 +6,7 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/02/20 15:06:11 by david            ###   ########.fr        #
+#    Updated: 2022/03/23 13:36:52 by dclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ HEADER	= ./
 
 NAME	= Violence_inutile
 
-CFLAGS	+= -Wall -Werror -Wextra -I $(HEADER) -std=c++98
+CFLAGS	+= -Wall -Werror -Wextra -I $(HEADER) -std=c++98 -fsanitize=address
 
 OBJS	= $(SRCS:.cpp=.o)
 

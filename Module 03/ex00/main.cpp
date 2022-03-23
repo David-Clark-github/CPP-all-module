@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 16:04:29 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/28 10:10:54 by david            ###   ########.fr       */
+/*   Updated: 2022/03/23 18:10:37 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(void) {
 	ClapTrap def;
-	ClapTrap toto("Titi");
+	ClapTrap toto("Toto");
 	ClapTrap test(def);
 
 	toto.attack(def.getName());

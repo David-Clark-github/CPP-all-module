@@ -1,93 +1,84 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.cpp                                          :+:      :+:    :+:   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 13:08:56 by dclark            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/03/23 15:39:22 by dclark           ###   ########.fr       */
-=======
-/*   Updated: 2022/03/23 14:51:47 by dclark           ###   ########.fr       */
->>>>>>> M01_V2_
+/*   Updated: 2022/03/23 17:37:13 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.h"
+#include "Harl.h"
 #include <iostream>
 #include <string>
 
-Karen::Karen(void)
+Harl::Harl(void)
 {
     return;
 }
 
-Karen::~Karen(void)
+Harl::~Harl(void)
 {
     return;
 }
 
-void    Karen::complain(std::string level) {
-    Karen   K;
-<<<<<<< HEAD
-	void    (Karen::*f)(void);
+void    Harl::complain(std::string level) {
+    Harl   H;
+    void    (Harl::*f)(void);
     switch (std::stoi(level))
-=======
-    void    (Karen::*f)(void);
-    switch (std::string level)
->>>>>>> M01_V2_
     {
-       case DEBUG:
-           f = &Karen::_debug;
-           (K.*f)();
+       case 1:
+           f = &Harl::_debug;
+           (H.*f)();
            break;
 
-       case INFO:
-           f = &Karen::_info;
-           (K.*f)();
+       case 2:
+           f = &Harl::_info;
+           (H.*f)();
            break;
 
-       case WARNING:
-           f = &Karen::_warning;
-           (K.*f)();
+       case 3:
+           f = &Harl::_warning;
+           (H.*f)();
            break;
 
-       case ERROR:
-           f = &Karen::_error;
-           (K.*f)();
+       case 4:
+           f = &Harl::_error;
+           (H.*f)();
            break;
 
        default:
-           std::cout << "Karen has nothin to say ;)" << std::endl;
+           std::cout << "Harl has nothin' to say ;)" << std::endl;
            break;
     }
     return;
 }
 
-void    Karen::_debug(void) {
-    std::cout << "I love having extra bacon for my \
+void    Harl::_debug(void) {
+    std::cout << "\nDEBUG_lvl:\nI love having extra bacon for my \
 7XL-double-cheese-triple-pickle-special-ketchup burger. \
 I really do !" << std::endl;
     return;
 }
 
-void    Karen::_info(void) {
-    std::cout << "I cannot believe adding extra bacon costs more money. \
+void    Harl::_info(void) {
+    std::cout << "\nINFO:\nI cannot believe adding extra bacon costs more money. \
 You didn’t put enough bacon in my burger ! \
 If you did, I wouldn’t be asking for more !" << std::endl;
     return;
 }
 
-void    Karen::_warning(void) {
-    std::cout << "I think I deserve to have some extra bacon for free. \
+void    Harl::_warning(void) {
+    std::cout << "\nWARNING_lvl:\nI think I deserve to have some extra bacon for free. \
 I’ve been coming for years whereas you started \
 working here since last month." << std::endl;
     return;
 }
 
-void    Karen::_error(void) {
-    std::cout << "This is unacceptable ! \
+void    Harl::_error(void) {
+    std::cout << "\nERROR_lvl:\nThis is unacceptable ! \
 I want to speak to the manager now." << std::endl;
     return;
 }
