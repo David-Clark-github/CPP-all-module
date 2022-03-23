@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 12:08:24 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/09 13:50:49 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/23 11:19:27 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(int ac, char **av)
 		std::cout << "Please enter a command (ADD, SEARCH or EXIT): ";
 		std::getline(std::cin, PB.command);
 		if (Utils.check_cmd(PB.command) == -1) {
-			;
+			/*Ignore if the cmd do not match*/;
 		} else if (Utils.check_cmd(PB.command) == EXIT) {
 			std::cout << "Thanks for your time, Goog bye !\n";
 			PB.setExit(1);
@@ -35,7 +35,7 @@ int main(int ac, char **av)
 			if (PB.getRepLen() != 0) {
 				std::cout << "Please enter an index for more information: ";
 				std::getline(std::cin, PB.command);
-				while (Utils.check_index(PB.command, PB.getRepLen())) {
+				while (Utils.check_index(PB.command, PB.getRepLen()) == false) {
 					std::cout << "Please enter a valid index: ";
 					std::getline(std::cin, PB.command);
 				}

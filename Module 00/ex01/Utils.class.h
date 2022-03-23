@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:20:04 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/22 18:46:13 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/23 11:03:06 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ public:
 	Utils(void);
 	~Utils(void);
 	int		check_cmd(std::string str)const;
-	int		check_tel(std::string tel)const;
+	bool	check_tel(std::string tel)const;
 	bool	check_index(std::string index, int RepLen);
 	bool	strIsAlpha(const std::string str);
 
