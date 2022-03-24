@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 14:53:53 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/24 12:17:40 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/24 12:54:15 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 //Default Constructor
 ClapTrap::ClapTrap(void):	_Name("default"),
 							_Hit_points(10),
-							_Energy_points(10),
+							_Energy_points(0),
 							_Attack_dammage(0)
 {
 	std::cout << "Default ClapTrap Constructor called" << std::endl;
@@ -64,9 +64,9 @@ void	ClapTrap::attack(const std::string &target) {
 	std::cout << "ClapTrap " << getName() << " attacks " << target << ", causing " << getAttackD() << " points of damage!" << std::endl;
 	setEnergy(getEnergy() - 1);
 	} else if (getEnergy() == 0){
-		std::cout << "No more Energy to do actions" << std::endl;
+		std::cout << getName() << " has no more energy to do actions" << std::endl;
 	} else if (getHitPoints() == 0){
-		std::cout << "No more Hit points to do actions" << std::endl;
+		std::cout << getName() << " has no more hit points to do actions" << std::endl;
 	}
 	return;
 }
@@ -85,9 +85,9 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 		setHitPoints(getHitPoints() + amount);
 		setEnergy(getEnergy() - 1);
 	} else if (getHitPoints() == 0) {
-		std::cout << "No more Hit points to do actions" << std::endl;
+		std::cout << getName() << " has no more energy to do actions" << std::endl;
 	} else if (getEnergy() == 0) {
-		std::cout << "No more Energy to do actions" << std::endl;
+		std::cout << getName() << " has no more hit points to do actions" << std::endl;
 	}
 	return;
 }
