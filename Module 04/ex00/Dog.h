@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:20:19 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/02 16:49:28 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/24 15:59:19 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Dog : public Animal {
 		Dog();
 		Dog(const Dog& d);
 		Dog&	operator=(const Dog& d);
-		~Dog();
+		virtual ~Dog();
 		virtual void	makeSound(void)const;
 };
 
