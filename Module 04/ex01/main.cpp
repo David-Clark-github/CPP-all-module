@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 16:11:51 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/04 11:42:28 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/24 16:34:19 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int main()
 		std::cout << "The Animal " << tab[i]->getType() << " do: ";
 		tab[i]->makeSound();
 	}
-	//tab[2]->makeSound();
 	for (int i = 0; i < 4; i++) {
 		delete tab[i];
 	}
