@@ -6,14 +6,14 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 17:36:57 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/07 12:12:30 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/24 17:12:22 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.h"
 
 Bureaucrat::Bureaucrat(void) {
-	setName((std::string)"Null");
+	setName((std::string)"Bob");
 	setGrade(150);
 	return;
 }
