@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:20:19 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/04 11:56:26 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/24 16:38:17 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "Animal.h"
 #include "Brain.h"
 
-class Cat : public Animal {
+class Cat : public A_Animal {
 	public:
 		Cat();
 		Cat(const Cat& c);

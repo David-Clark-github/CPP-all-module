@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 16:11:51 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/04 16:50:39 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/24 16:39:02 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@
 
 int main()
 {
-	Animal	*tab[4];
-	//Animal	*test = Animal();
+	A_Animal	*tab[4];
 	for (int i = 0; i < 4; i++) {
 		if (i < (4 / 2)) {
 			tab[i] = new Dog();
@@ -34,7 +33,6 @@ int main()
 		std::cout << "The Animal " << tab[i]->getType() << " do: ";
 		tab[i]->makeSound();
 	}
-	//tab[2]->makeSound();
 	for (int i = 0; i < 4; i++) {
 		delete tab[i];
 	}
