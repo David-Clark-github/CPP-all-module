@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:48:33 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/28 15:37:43 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/24 12:50:38 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,11 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &s) {
 }
 
 ScavTrap::~ScavTrap(void) {
-	std::cout << "ScavTrap Desctructor called" << std::endl;
+	std::cout << "ScavTrap Desctructor " << getName() << " called" << std::endl;
 	return;
 }
+
+
 
 void	ScavTrap::guardGate(void) {
 	std::cout << getName() << " has enter into Gate keeper !" << std::endl;
