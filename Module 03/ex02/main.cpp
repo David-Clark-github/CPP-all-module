@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 16:04:29 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/28 18:11:36 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/24 13:09:46 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(void) {
 
 	FragTrap	test = FragTrap("Test");
 	def.attack(s.getName());
-	def.takeDammage(s.getAttackD());
+	s.takeDammage(def.getAttackD());
 	test.highFivesGuyes();
 
 	return 0;

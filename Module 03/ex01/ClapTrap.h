@@ -6,7 +6,7 @@
 /*   By: dclark <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 14:47:02 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/24 12:50:37 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/24 13:25:47 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 #include <string>
 #include <iostream>
+
+#define H_P 100
+#define E_P 50
+#define A_D 20
 
 class ClapTrap {
 
@@ -34,7 +38,7 @@ class ClapTrap {
 		void			setEnergy(int amount);
 		int				getEnergy(void)const;
 		void			setAttackD(unsigned int amout);
-		unsigned int	getAttackD(void)const;
+		unsigned int			getAttackD(void)const;
 
 	private:
 		std::string		_Name;

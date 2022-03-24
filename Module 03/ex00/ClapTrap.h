@@ -6,7 +6,7 @@
 /*   By: dclark <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 14:47:02 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/23 18:10:34 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/24 13:21:44 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 #include <string>
 #include <iostream>
+
+#define H_P 10
+#define E_P 10
+#define A_D 0
 
 class ClapTrap {
 

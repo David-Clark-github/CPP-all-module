@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 14:53:53 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/24 13:12:16 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/24 13:22:16 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 //Default Constructor
 ClapTrap::ClapTrap(void):	_Name("default"),
-							_Hit_points(10),
-							_Energy_points(0),
-							_Attack_dammage(0)
+							_Hit_points(H_P),
+							_Energy_points(E_P),
+							_Attack_dammage(A_D)
 {
 	std::cout << "Default ClapTrap Constructor called" << std::endl;
 	return;
 }
 
 //Name Constructor
-ClapTrap::ClapTrap(std::string Name):	_Hit_points(10),
-										_Energy_points(10),
-										_Attack_dammage(0)
+ClapTrap::ClapTrap(std::string Name):	_Hit_points(H_P),
+										_Energy_points(E_P),
+										_Attack_dammage(A_D)
 {
 	setName(Name);
 	std::cout << "Name ClapTrap Constructor called with: " << Name << std::endl;

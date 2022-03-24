@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:48:33 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/28 18:12:55 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/24 13:06:11 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ FragTrap &FragTrap::operator=(const FragTrap &s) {
 }
 
 FragTrap::~FragTrap(void) {
-	std::cout << "FragTrap Desctructor called" << std::endl;
+	std::cout << "FragTrap Desctructor " << getName() << " called" << std::endl;
 	return;
 }
 

@@ -6,7 +6,7 @@
 /*   By: dclark <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 14:47:02 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/28 18:04:39 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/24 13:25:26 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 #include <string>
 #include <iostream>
+
+#define H_P 100
+#define E_P 100
+#define A_D 30
 
 class ClapTrap {
 
@@ -26,7 +30,7 @@ class ClapTrap {
 		ClapTrap		&operator=(const ClapTrap &c);
 		void			attack(const std::string &target);
 		void			takeDammage(unsigned int amount);
-		void			beRepair(unsigned int amount);
+		void			beRepaired(unsigned int amount);
 		void			setName(std::string name);
 		std::string		getName(void)const;
 		void			setHitPoints(int amount);
