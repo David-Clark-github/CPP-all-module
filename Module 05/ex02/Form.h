@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:14:19 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/27 17:07:41 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/27 18:23:08 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@
 
 class Bureaucrat;
 
-class Form {
+class A_Form {
 
 	public:
 		Form();
 		Form(const std::string name, const int gradeSign, const int gradeExec);
 		Form(const Form& f);
 		Form& operator=(const Form& f);
-		~Form();
+		virtual ~Form();
 
 		/* Grade exception */
 		class GradeTooLowException : public std::exception {
@@ -49,7 +49,7 @@ class Form {
 		bool		getFormSigne(void)const;
 		int			getGradeSigne(void)const;
 		int			getGradeExec(void)const;
-		void		beSigned(Bureaucrat& b);
+		void		beSigned(Bureaucrat& b) = 0;
 
 	private:
 		const	std::string	_name;

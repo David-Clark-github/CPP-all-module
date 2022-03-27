@@ -6,24 +6,24 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:49:36 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/27 16:59:42 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/27 18:10:37 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.h"
 
-Form::Form(void) : _name("default"), _gradeSigne(150), _gradeExec(150) {
+A_Form::Form(void) : _name("default"), _gradeSigne(150), _gradeExec(150) {
 	return;
 }
 
-Form::Form(const std::string name, const int gradeSign, const int gradeExec)
+A_Form::Form(const std::string name, const int gradeSign, const int gradeExec)
 :_name(name), _gradeSigne(gradeSign), _gradeExec(gradeSign)
 {
 	try {
 		if (gradeSign > 150 || gradeExec > 150) {
-			throw Form::GradeTooLowException();
+			throw A_Form::GradeTooLowException();
 		} else if (gradeSign < 1 || gradeExec < 1) {
-			throw Form::GradeTooHighException();
+			throw A_Form::GradeTooHighException();
 		}
 	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
@@ -31,43 +31,44 @@ Form::Form(const std::string name, const int gradeSign, const int gradeExec)
 	return;
 }
 
-Form::Form(const Form& f) : _name(f.getName()), _formSigne(f.getFormSigne()), _gradeSigne(f.getGradeSigne()), _gradeExec(f.getGradeExec()) {
+A_Form::Form(const Form& f) : _name(f.getName()), _formSigne(f.getFormSigne()), _gradeSigne(f.getGradeSigne()), _gradeExec(f.getGradeExec()) {
 	*this = f;
 	return;
 }
 
-Form& Form::operator=(const Form& f) {
+Form& A_Form::operator=(const Form& f) {
 	return *this;
 }
 
-Form::~Form(void) {
+A_Form::~Form(void) {
 	return;
 }
 
-std::string Form::getName(void)const {
+std::string A_Form::getName(void)const {
 	return this->_name;
 }
 
-void	Form::setFormSigne(bool signe) {
+void	A_Form::setFormSigne(bool signe) {
 	this->_formSigne = signe;
 }
 
-bool	Form::getFormSigne(void)const {
+bool	A_Form::getFormSigne(void)const {
 	return this->_formSigne;
 }
 
-int	Form::getGradeSigne(void)const {
+int	A_Form::getGradeSigne(void)const {
 	return this->_gradeSigne;
 }
 
-int	Form::getGradeExec(void)const {
+int	A_Form::getGradeExec(void)const {
 	return this->_gradeExec;
 }
 
-void	Form::beSigned(Bureaucrat& b) {
+/*
+void	A_Form::beSigned(Bureaucrat& b) {
 	try {
 		if (b.getGrade() > getGradeSigne()) {
-			throw Form::GradeTooLowException();
+			throw A_Form::GradeTooLowException();
 		} else {
 			setFormSigne(1);
 		}
@@ -76,6 +77,7 @@ void	Form::beSigned(Bureaucrat& b) {
 	}
 	b.signeForm(*this);
 }
+*/
 
 std::ostream & operator<<(std::ostream & o, const Form & f) {
 	o << "name: " << f.getName() << std::endl;
