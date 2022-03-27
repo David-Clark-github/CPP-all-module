@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 17:36:57 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/07 12:12:30 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/27 17:07:39 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,12 @@ void	Bureaucrat::setGrade(const int grade) {
 		}
 	} catch (Bureaucrat::GradeTooLowException& e) {
 		std::cout << e.what() << std::endl;
-		std::cout << "The grade will be set to 150" << std::endl;
+		std::cout << "The Grade will be set to 150" << std::endl;
 		this->_grade = 150;
 		return;
 	} catch (Bureaucrat::GradeTooHighException& e) {
 		std::cout << e.what() << std::endl;
-		std::cout << "The grade will be set to 1" << std::endl;
+		std::cout << "The Grade will be set to 1" << std::endl;
 		this->_grade = 1;
 		return;
 	}

@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:49:36 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/27 15:37:34 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/27 16:59:42 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,14 @@ Form::Form(void) : _name("default"), _gradeSigne(150), _gradeExec(150) {
 Form::Form(const std::string name, const int gradeSign, const int gradeExec)
 :_name(name), _gradeSigne(gradeSign), _gradeExec(gradeSign)
 {
-	if (gradeSign > 150 || gradeExec > 150) {
-		throw Form::GradeTooLowException();
-	} else if (gradeSign < 1 || gradeExec < 1) {
-		throw Form::GradeTooHighException();
+	try {
+		if (gradeSign > 150 || gradeExec > 150) {
+			throw Form::GradeTooLowException();
+		} else if (gradeSign < 1 || gradeExec < 1) {
+			throw Form::GradeTooHighException();
+		}
+	} catch (std::exception& e) {
+		std::cout << e.what() << std::endl;
 	}
 	return;
 }
@@ -43,51 +47,6 @@ Form::~Form(void) {
 std::string Form::getName(void)const {
 	return this->_name;
 }
-
-void	Form::setGradeS(const int grade) {
-	try {
-		if (grade > 150) {
-			throw Form::GradeTooLowException();
-		} else if (grade < 1) {
-			throw Form::GradeTooHighException();
-		}
-	} catch (Form::GradeTooLowException& e) {
-		std::cout << e.what() << std::endl;
-		std::cout << "The grade will be set to 150" << std::endl;
-		this->_gradeSigne = 150;
-		return;
-	} catch (Form::GradeTooHighException& e) {
-		std::cout << e.what() << std::endl;
-		std::cout << "The grade will be set to 1" << std::endl;
-		this->_gradeSigne = 1;
-		return;
-	}
-	return;
-}
-
-/*
-void	Form::setGradeE(const int grade) {
-	try {
-		if (grade > 150) {
-			throw Form::GradeTooLowException();
-		} else if (grade < 1) {
-			throw Form::GradeTooHighException();
-		}
-	} catch (Form::GradeTooLowException& e) {
-		std::cout << e.what() << std::endl;
-//		std::cout << "The grade will be set to 150" << std::endl;
-//		this->_grade = 150;
-		return;
-	} catch (Form::GradeTooHighException& e) {
-		std::cout << e.what() << std::endl;
-//		std::cout << "The grade will be set to 1" << std::endl;
-//		this->_gradeExec = 1;
-		return;
-	}
-	//this->_gradeExec = grade;
-	return;
-}
-*/
 
 void	Form::setFormSigne(bool signe) {
 	this->_formSigne = signe;
