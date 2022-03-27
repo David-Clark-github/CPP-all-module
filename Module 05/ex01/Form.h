@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:14:19 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/24 18:16:38 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/27 15:37:35 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ class Form {
 
 		/* Functions and accessors */
 		std::string	getName(void)const;
-		void		setGradeS(const int grade);
-		void		setGradeE(const int grade);
+	//	void		setGradeS(const int grade);
+	//	void		setGradeE(const int grade);
 		void		setFormSigne(bool signe);
 		bool		getFormSigne(void)const;
 		int			getGradeSigne(void)const;

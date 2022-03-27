@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:49:36 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/24 18:16:39 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/27 15:37:34 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,13 @@ Form::Form(void) : _name("default"), _gradeSigne(150), _gradeExec(150) {
 }
 
 Form::Form(const std::string name, const int gradeSign, const int gradeExec)
-:_name(name), Form.setGradeS(gradeSign), Form.setGradeE(gradeExec)
+:_name(name), _gradeSigne(gradeSign), _gradeExec(gradeSign)
 {
+	if (gradeSign > 150 || gradeExec > 150) {
+		throw Form::GradeTooLowException();
+	} else if (gradeSign < 1 || gradeExec < 1) {
+		throw Form::GradeTooHighException();
+	}
 	return;
 }
 
@@ -49,7 +54,7 @@ void	Form::setGradeS(const int grade) {
 	} catch (Form::GradeTooLowException& e) {
 		std::cout << e.what() << std::endl;
 		std::cout << "The grade will be set to 150" << std::endl;
-		this->_grade = 150;
+		this->_gradeSigne = 150;
 		return;
 	} catch (Form::GradeTooHighException& e) {
 		std::cout << e.what() << std::endl;
@@ -57,10 +62,10 @@ void	Form::setGradeS(const int grade) {
 		this->_gradeSigne = 1;
 		return;
 	}
-	this->_gradeSigne = grade;
 	return;
 }
 
+/*
 void	Form::setGradeE(const int grade) {
 	try {
 		if (grade > 150) {
@@ -70,18 +75,19 @@ void	Form::setGradeE(const int grade) {
 		}
 	} catch (Form::GradeTooLowException& e) {
 		std::cout << e.what() << std::endl;
-		std::cout << "The grade will be set to 150" << std::endl;
-		this->_grade = 150;
+//		std::cout << "The grade will be set to 150" << std::endl;
+//		this->_grade = 150;
 		return;
 	} catch (Form::GradeTooHighException& e) {
 		std::cout << e.what() << std::endl;
-		std::cout << "The grade will be set to 1" << std::endl;
-		this->_gradeExec = 1;
+//		std::cout << "The grade will be set to 1" << std::endl;
+//		this->_gradeExec = 1;
 		return;
 	}
-	this->_gradeExec = grade;
+	//this->_gradeExec = grade;
 	return;
 }
+*/
 
 void	Form::setFormSigne(bool signe) {
 	this->_formSigne = signe;
@@ -112,8 +118,8 @@ void	Form::beSigned(Bureaucrat& b) {
 	b.signeForm(*this);
 }
 
-std::ostream & operator<<(std::ostream & o, Form & f) {
-	o << "name: " << f.getName();
+std::ostream & operator<<(std::ostream & o, const Form & f) {
+	o << "name: " << f.getName() << std::endl;
 	if (f.getFormSigne () == false)
 		o << "Singed: No" << std::endl;
 	else

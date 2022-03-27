@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 18:39:15 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/24 18:16:34 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/27 15:37:38 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,15 @@
 int main() {
 	Bureaucrat	r("Roger", 162);
 	Bureaucrat	toto;
-	Form		f1("form1", 100, 100);
+	try {
+		Form	f1("form1", 100, 100);
+	} catch (const std::exception& e) {
+		std::cout << e.what() << std::endl;
+		return 1;
+	}
 	Form		f2("form2", 1, 1);
 	Form		f3("form3", 150, 150);
+	Form		f4("form4", 160, 150);
 
 	std::cout << r << std::endl;
 	std::cout << toto << std::endl;
@@ -35,5 +41,4 @@ int main() {
 	f1.beSigned(toto);
 	f2.beSigned(r);
 	f3.beSigned(r);
-
 }
