@@ -6,26 +6,26 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 17:49:55 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/28 13:36:53 by david            ###   ########.fr       */
+/*   Updated: 2022/03/29 15:38:39 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.h"
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
-:_name("Tree"), _gradeSigne(145), _gradeExec(137), _target(target)
+//: _name("Tree"), _gradeSigne(145), _gradeExec(137), _target(target)
 {
 	return;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& s)
-: _name(s.getName()), _gradeSigne(s.getGradeSigne()), _gradeExec(s.getGradeExec()), _target(s.getTarget())
+//: _name(s.getName()), _gradeSigne(s.getGradeSigne()), _gradeExec(s.getGradeExec()), _target(s.getTarget())
 {
 	*this = s;
 	return;
 }
 
-ShrubberyCreationForm& operator=(const ShrubberyCreationForm& s)
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& s)
 {
 	if (this != &s) {
 		this->_name = s.getName();
@@ -42,6 +42,7 @@ void	ShrubberyCreationForm::beSigned(Bureaucrat& b)
 	try {
 		if (b.getGrade() > getGradeSigne()) {
 			throw GradeTooLowException();
+		}
 	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
 		return;
@@ -51,11 +52,11 @@ void	ShrubberyCreationForm::beSigned(Bureaucrat& b)
 	return;
 }
 
-void	execute(Bureaucrat const & executor)const {
+void	ShrubberyCreationForm::execute(Bureaucrat const & executor)const {
 	try {
 		if (getFormSigne() == false)
 			throw ShrubberyCreationForm::FormNotSignedException();
-		else if (getGradeExec() < exception.getGrade())
+		else if (getGradeExec() < executor.getGrade())
 			throw ShrubberyCreationForm::GradeTooLowException();
 	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
@@ -63,8 +64,11 @@ void	execute(Bureaucrat const & executor)const {
 	}
 	if (getFormSigne() == true)
 	{
+		std::cout << "Is signed" << std::endl;
+		return;
 		//do stuff here
 	}
+	return;
 }
 
 std::string	ShrubberyCreationForm::getTarget(void)const
