@@ -6,13 +6,14 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/03/07 12:54:14 by dclark           ###   ########.fr        #
+#    Updated: 2022/03/29 14:00:46 by david            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	=	main.cpp \
 			Bureaucrat.cpp \
-			Form.cpp
+			Form.cpp \
+			ShrubberyCreationForm.cpp
 
 HEADER	= ./
 

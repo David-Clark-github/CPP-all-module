@@ -31,18 +31,36 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void) {
 	return;
 }
 
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& s)
+//: _name(s.getName()), _gradeSigne(s.getGradeSigne()), _gradeExec(s.getGradeExec()), _target(s.getTarget())
+{
+	*this = s;
+	return;
+}
+
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& s)
+{
+	if (this != &s) {
+		this->_name = s.getName();
+		this->_gradeSigne = s.getGradeSigne();
+		this->_gradeExec = s.getGradeExec();
+		this->_formSigne = s.getFormSigne();
+		this->_target = s.getTarget();
+	}
+	return *this;
+}
+
 void	ShrubberyCreationForm::beSigned(Bureaucrat& b)
 {
 	try {
 		if (b.getGrade() > getGradeSigne()) {
 			throw GradeTooLowException();
-		} else {
-			setFormSigne(true);
 		}
 	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
 		return;
 	}
+	setFormSigne(true);
 	b.signeForm(*this);
 	return;
 }

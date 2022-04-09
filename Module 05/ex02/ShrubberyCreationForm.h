@@ -35,8 +35,11 @@ class ShrubberyCreationForm : public A_Form {
 				}
 		};
 
-		void	beSigned(Bureaucrat& b);
-		void	execute(Bureaucrat const & executor)const;
+		virtual void	beSigned(Bureaucrat& b);
+		void			execute(Bureaucrat const & executor)const;
+		std::string	getTarget(void)const;
+	private:
+		std::string _target;
 };
 
 #endif
