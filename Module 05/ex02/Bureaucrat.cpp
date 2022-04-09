@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 17:36:57 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/27 17:07:39 by dclark           ###   ########.fr       */
+/*   Updated: 2022/04/09 14:57:46 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	Bureaucrat::decreGrade(const int val) {
 	setGrade(getGrade() + val);
 }
 
-void	Bureaucrat::signeForm(Form& f) {
+void	Bureaucrat::signeForm(A_Form& f) {
 	try {
 		if (f.getFormSigne() == 1) {
 			std::cout << getName() << " signed " << f.getName() << std::endl;

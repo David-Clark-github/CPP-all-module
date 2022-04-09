@@ -6,17 +6,17 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:49:36 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/27 18:10:37 by dclark           ###   ########.fr       */
+/*   Updated: 2022/04/09 14:34:29 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.h"
 
-A_Form::Form(void) : _name("default"), _gradeSigne(150), _gradeExec(150) {
+A_Form::A_Form(void) : _name("default"), _gradeSigne(150), _gradeExec(150) {
 	return;
 }
 
-A_Form::Form(const std::string name, const int gradeSign, const int gradeExec)
+A_Form::A_Form(const std::string name, const int gradeSign, const int gradeExec)
 :_name(name), _gradeSigne(gradeSign), _gradeExec(gradeSign)
 {
 	try {
@@ -31,16 +31,16 @@ A_Form::Form(const std::string name, const int gradeSign, const int gradeExec)
 	return;
 }
 
-A_Form::Form(const Form& f) : _name(f.getName()), _formSigne(f.getFormSigne()), _gradeSigne(f.getGradeSigne()), _gradeExec(f.getGradeExec()) {
+A_Form::A_Form(const A_Form& f) : _name(f.getName()), _formSigne(f.getFormSigne()), _gradeSigne(f.getGradeSigne()), _gradeExec(f.getGradeExec()) {
 	*this = f;
 	return;
 }
 
-Form& A_Form::operator=(const Form& f) {
+A_Form& A_Form::operator=(const A_Form& f) {
 	return *this;
 }
 
-A_Form::~Form(void) {
+A_Form::~A_Form(void) {
 	return;
 }
 
@@ -79,7 +79,7 @@ void	A_Form::beSigned(Bureaucrat& b) {
 }
 */
 
-std::ostream & operator<<(std::ostream & o, const Form & f) {
+std::ostream & operator<<(std::ostream & o, const A_Form & f) {
 	o << "name: " << f.getName() << std::endl;
 	if (f.getFormSigne () == false)
 		o << "Singed: No" << std::endl;
