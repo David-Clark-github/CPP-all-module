@@ -6,17 +6,17 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 17:49:55 by dclark            #+#    #+#             */
-/*   Updated: 2022/04/09 15:06:05 by dclark           ###   ########.fr       */
+/*   Updated: 2022/04/09 16:38:56 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Form.h"
 #include "ShrubberyCreationForm.h"
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm(void)
-: A_Form("ShrubberyCreationForm", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
+: A_Form("ShrubberyCreationForm", 145, 137), _target(target)
 {
-	std::cout << "Shru form created" << std::endl;
+	//std::cout << "Shru form created" << std::endl;
 	return;
 }
 
@@ -27,17 +27,19 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& s)
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm(void) {
-	std::cout << "Shru form destructor called" << std::endl;
+	//std::cout << "Shru form destructor called" << std::endl;
 	return;
 }
-
+/*
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& s)
 //: _name(s.getName()), _gradeSigne(s.getGradeSigne()), _gradeExec(s.getGradeExec()), _target(s.getTarget())
 {
 	*this = s;
 	return;
 }
+*/
 
+/*
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& s)
 {
 	if (this != &s) {
@@ -49,6 +51,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	}
 	return *this;
 }
+*/
 
 void	ShrubberyCreationForm::beSigned(Bureaucrat& b)
 {
@@ -77,13 +80,18 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor)const {
 	}
 	if (getFormSigne() == true)
 	{
-		std::ofstream ofs("<target>_shrubbery");
-		ofs << " /\\" << std::endl;
-		ofs << "/||\\" << std::endl;
-		ofs << "/||\\" << std::endl;
-		ofs << "/||\\" << std::endl;
+		std::ofstream ofs(getTarget() + (std::string)"_shrubbery");
+		ofs << "    /\\    /\\"    << std::endl;
+		ofs << " /\\/||\\  /||\\  /\\" << std::endl;
+		ofs << "/||\\||\\ /\\||\\ /||\\" << std::endl;
+		ofs << "/||\\||\\/||\\|\\ /||\\" << std::endl;
+		ofs << "/||\\||\\/||\\|\\ /||\\" << std::endl;
 		ofs.close();
-		std::cout << "target created" << std::endl;
+		std::cout << getTarget() << " created" << std::endl;
 	}
 	return;
+}
+
+std::string	ShrubberyCreationForm::getTarget(void)const {
+	return this->_target;
 }
