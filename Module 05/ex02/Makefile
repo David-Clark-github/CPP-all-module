@@ -6,18 +6,18 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/03/29 14:00:46 by david            ###   ########.fr        #
+#    Updated: 2022/04/10 12:50:54 by dclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	=	main.cpp \
 			Bureaucrat.cpp \
 			Form.cpp \
-			ShrubberyCreationForm.cpp
+			ShrubberyCreationForm.cpp 
 
 HEADER	= ./
 
-NAME	= Bureaucrate_et_des_larves
+NAME	= 28B_ou_28C_?
 
 CFLAGS	+= -Wall -Werror -Wextra -I $(HEADER) -std=c++98 # -g -fsanitize=address
 

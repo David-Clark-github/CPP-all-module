@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 14:26:13 by dclark            #+#    #+#             */
-/*   Updated: 2022/04/09 16:38:30 by dclark           ###   ########.fr       */
+/*   Updated: 2022/04/10 12:39:45 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(void) {
 	//Tentative de signé un formulaire
 	S.beSigned(C);
 
-	//Tentativ d'executer un formulaire (non signé)
+	//Tentative d'executer un formulaire (non signé)
 	S.execute(B);
 
 	//Signature d'un formulaire
