@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 17:49:55 by dclark            #+#    #+#             */
-/*   Updated: 2022/04/09 16:38:56 by dclark           ###   ########.fr       */
+/*   Updated: 2022/04/10 16:57:34 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Form.h"
@@ -21,25 +21,12 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& s)
+: A_Form("ShrubberyCreationForm", s.getGradeSigne(), s.getGradeExec()), _target(s.getTarget())
 {
 	*this = s;
 	return;
 }
 
-ShrubberyCreationForm::~ShrubberyCreationForm(void) {
-	//std::cout << "Shru form destructor called" << std::endl;
-	return;
-}
-/*
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& s)
-//: _name(s.getName()), _gradeSigne(s.getGradeSigne()), _gradeExec(s.getGradeExec()), _target(s.getTarget())
-{
-	*this = s;
-	return;
-}
-*/
-
-/*
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& s)
 {
 	if (this != &s) {
@@ -51,7 +38,10 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	}
 	return *this;
 }
-*/
+
+ShrubberyCreationForm::~ShrubberyCreationForm(void) {
+	return;
+}
 
 void	ShrubberyCreationForm::beSigned(Bureaucrat& b)
 {

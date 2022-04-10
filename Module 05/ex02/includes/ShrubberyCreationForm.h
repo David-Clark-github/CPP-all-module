@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 17:37:02 by dclark            #+#    #+#             */
-/*   Updated: 2022/04/09 15:36:19 by dclark           ###   ########.fr       */
+/*   Updated: 2022/04/10 16:15:46 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@
 class ShrubberyCreationForm : public A_Form {
 
 	public:
-		ShrubberyCreationForm(std::string target);												//O ! Init des val avec le const de A_Form...
-		ShrubberyCreationForm(const ShrubberyCreationForm& s);					//O !
-		//ShrubberyCreationForm& operator=(const ShrubberyCreationForm& s);		//X !
-		virtual ~ShrubberyCreationForm();										//X !
+		ShrubberyCreationForm(std::string target);										
+		ShrubberyCreationForm(const ShrubberyCreationForm& s);
+		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& s);
+		virtual ~ShrubberyCreationForm();
 
 		/* Form signed exception */
 		class FormNotSignedException : public std::exception {
