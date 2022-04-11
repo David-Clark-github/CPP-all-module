@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 17:37:02 by dclark            #+#    #+#             */
-/*   Updated: 2022/04/10 16:15:46 by dclark           ###   ########.fr       */
+/*   Updated: 2022/04/11 16:02:27 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 class ShrubberyCreationForm : public A_Form {
 
 	public:
+		/* Canonique class */
 		ShrubberyCreationForm(std::string target);										
 		ShrubberyCreationForm(const ShrubberyCreationForm& s);
 		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& s);
@@ -35,11 +36,16 @@ class ShrubberyCreationForm : public A_Form {
 				}
 		};
 
+		/* public func */
 		virtual void	beSigned(Bureaucrat& b);
 		void			execute(Bureaucrat const & executor)const;
-		std::string	getTarget(void)const;
+		void			setTarget(const std::string target);
+		std::string		getTarget(void)const;
+
 	private:
 		std::string _target;
 };
+
+std::ostream& operator<<(std::ostream& o, const ShrubberyCreationForm& s);
 
 #endif

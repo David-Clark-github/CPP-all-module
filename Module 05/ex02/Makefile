@@ -6,7 +6,7 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/04/10 14:41:48 by dclark           ###   ########.fr        #
+#    Updated: 2022/04/11 16:20:31 by dclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,21 +15,24 @@ CC		=	c++
 CFLAGS	=	-I$(IDIR)
 
 ODIR	=	./obj
+SDIR	=	./src
 
 NAME	=	28B_ou_28C
 
 _DEPS	=	Form.h \
 			ShrubberyCreationForm.h \
 			Bureaucrat.h
+
 DEPS	=	$(patsubst %,$(IDIR)/%,$(_DEPS))
 
 _OBJ	=	Bureaucrat.o \
 			Form.o \
 			main.o \
 			ShrubberyCreationForm.o
+
 OBJ		=	$(patsubst %,$(ODIR)/%,$(_OBJ))
 
-$(ODIR)/%.o: %.cpp $(DEPS)
+$(ODIR)/%.o: $(SDIR)/%.cpp $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 $(NAME): $(OBJ)
@@ -43,4 +46,4 @@ fclean: clean
 
 re: fclean $(NAME)
 
-.PHONY: clean fclean
+.PHONY: clean fclean $(NAME)

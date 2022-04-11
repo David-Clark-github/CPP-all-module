@@ -6,12 +6,13 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 17:49:55 by dclark            #+#    #+#             */
-/*   Updated: 2022/04/10 16:57:34 by dclark           ###   ########.fr       */
+/*   Updated: 2022/04/11 16:04:07 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Form.h"
 #include "ShrubberyCreationForm.h"
 #include <fstream>
+#include <iostream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
 : A_Form("ShrubberyCreationForm", 145, 137), _target(target)
@@ -30,11 +31,8 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& s)
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& s)
 {
 	if (this != &s) {
-		this->_name = s.getName();
-		this->_gradeSigne = s.getGradeSigne();
-		this->_gradeExec = s.getGradeExec();
-		this->_formSigne = s.getFormSigne();
-		this->_target = s.getTarget();
+		this->setTarget(s.getTarget());
+		this->setFormSigne(s.getFormSigne());
 	}
 	return *this;
 }
@@ -82,6 +80,23 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor)const {
 	return;
 }
 
+void	ShrubberyCreationForm::setTarget(const std::string target) {
+	this->_target = target;
+	return;
+}
+
 std::string	ShrubberyCreationForm::getTarget(void)const {
 	return this->_target;
+}
+
+std::ostream & operator<<(std::ostream& o, const ShrubberyCreationForm& s) {
+	o << "name: [" << s.getName() << "]" << std::endl;
+	if (s.getFormSigne() == false)
+		o << "Signed: No" << std::endl;
+	else
+		o << "Signed: Yes" << std::endl;
+	o << "Grade signe: " << s.getGradeSigne() << std::endl;
+	o << "Grade exec: " << s.getGradeExec() << std::endl;
+	o << "Target: [" << s.getTarget() << "]" << std::endl;
+	return o;
 }
