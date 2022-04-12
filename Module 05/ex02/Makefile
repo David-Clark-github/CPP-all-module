@@ -6,7 +6,7 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/04/12 15:14:11 by dclark           ###   ########.fr        #
+#    Updated: 2022/04/12 17:17:53 by dclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,7 @@ _DEPS	=	Form.h \
 			ShrubberyCreationForm.h \
 			Bureaucrat.h \
 			RobotomyRequestForm.h \
-			PresidentialPardonForm.h
-
+			PresidentialPardonForm.h \
 DEPS	=	$(patsubst %,$(IDIR)/%,$(_DEPS))
 
 _OBJ	=	main.o \
@@ -33,7 +32,6 @@ _OBJ	=	main.o \
 			Bureaucrat.o \
 			RobotomyRequestForm.o \
 			PresidentialPardonForm.o
-
 OBJ		=	$(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: $(SDIR)/%.cpp $(DEPS)
@@ -50,4 +48,4 @@ fclean: clean
 
 re: fclean $(NAME)
 
-.PHONY: clean fclean $(NAME)
+.PHONY: clean fclean re
