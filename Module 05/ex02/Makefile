@@ -6,7 +6,7 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/04/11 18:14:34 by dclark           ###   ########.fr        #
+#    Updated: 2022/04/12 15:14:11 by dclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ _DEPS	=	Form.h \
 			ShrubberyCreationForm.h \
 			Bureaucrat.h \
 			RobotomyRequestForm.h \
-			PresiendtialPardonForm.h \
+			PresidentialPardonForm.h
+
 DEPS	=	$(patsubst %,$(IDIR)/%,$(_DEPS))
 
 _OBJ	=	main.o \
@@ -31,10 +32,11 @@ _OBJ	=	main.o \
 			ShrubberyCreationForm.o \
 			Bureaucrat.o \
 			RobotomyRequestForm.o \
-			PresiendtialPardonForm.o \
+			PresidentialPardonForm.o
+
 OBJ		=	$(patsubst %,$(ODIR)/%,$(_OBJ))
 
-$(ODIR)/%.o: %.cpp $(DEPS)
+$(ODIR)/%.o: $(SDIR)/%.cpp $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 $(NAME): $(OBJ)
