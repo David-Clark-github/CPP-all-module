@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.h                                             :+:      :+:    :+:   */
+/*   Bureaucrat.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 12:14:19 by dclark            #+#    #+#             */
-/*   Updated: 2022/04/12 18:57:12 by dclark           ###   ########.fr       */
+/*   Created: 2022/03/04 17:37:08 by dclark            #+#    #+#             */
+/*   Updated: 2022/04/11 18:14:33 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_H
-# define FORM_H
+#ifndef BUREAUCRAT_H
+# define BUREAUCRAT_H
 
-#include "Bureaucrat.h"
-#include <iostream>
+#include "Form.h"
 #include <string>
+#include <iostream>
 #include <stdexcept>
 
-class Bureaucrat;
+class A_Form;
 
-class A_Form {
-
+class Bureaucrat {
 	public:
-		A_Form();
-		A_Form(const std::string name, const int gradeSign, const int gradeExec);
-		A_Form(const A_Form& f);
-		A_Form& operator=(const A_Form& f);
-		virtual ~A_Form();
-
-		/* Grade exception */
+		Bureaucrat();
+		Bureaucrat(std::string name, int grade);
+		Bureaucrat(const Bureaucrat& b);
+		Bureaucrat& operator=(const Bureaucrat& b);
+		~Bureaucrat();
 		class GradeTooLowException : public std::exception {
 			public:
 				virtual const char* what() const throw() {
@@ -42,24 +39,19 @@ class A_Form {
 					return ("The Grade is too high");
 				}
 		};
-
-		/* Functions and accessors */
-		std::string		getName(void)const;
-		void			setFormSigne(bool signe);
-		bool			getFormSigne(void)const;
-		int				getGradeSigne(void)const;
-		int				getGradeExec(void)const;
-		virtual void	beSigned(Bureaucrat& b) = 0;
-		virtual	void	execute(Bureaucrat const & executor)const = 0;
+		void		setName(const std::string);
+		std::string	getName(void)const;
+		void		setGrade(const int grade);
+		int			getGrade(void)const;
+		void		increGrade(const int val);
+		void		decreGrade(const int val);
+		void		signeForm(A_Form& f);
 
 	private:
-		const	std::string	_name;
-				bool		_formSigne = false;
-		const	int			_gradeSigne;
-		const	int			_gradeExec;
-
+		std::string	_name;
+		int			_grade;
 };
 
-std::ostream &	operator<<(std::ostream & o, const A_Form & f);
+std::ostream &	operator<<(std::ostream & o, const Bureaucrat & b);
 
 #endif
