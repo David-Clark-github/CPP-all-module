@@ -6,7 +6,7 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/04/12 18:59:37 by dclark           ###   ########.fr        #
+#    Updated: 2022/04/13 12:37:42 by dclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ IDIR	=	./includes
 CC		=	c++
 CFLAGS	=	-I$(IDIR)
 
-ODIR	=	./obj
+ODIR	=	./.obj
 SDIR	=	./src
 
 NAME	=	Stagiaire
