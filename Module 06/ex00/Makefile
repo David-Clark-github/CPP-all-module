@@ -6,13 +6,13 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/04/13 16:10:24 by dclark           ###   ########.fr        #
+#    Updated: 2022/04/14 15:05:57 by dclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 IDIR	=	./includes
 CC		=	c++
-CFLAGS	=	-I$(IDIR)
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -I$(IDIR)
 
 ODIR	=	./.obj
 SDIR	=	./src
