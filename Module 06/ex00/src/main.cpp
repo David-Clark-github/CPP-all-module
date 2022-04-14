@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 13:22:27 by dclark            #+#    #+#             */
-/*   Updated: 2022/04/14 15:05:54 by dclark           ###   ########.fr       */
+/*   Updated: 2022/04/14 15:47:30 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #define	T_CC 4
@@ -20,9 +20,13 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <stdio.h>
+#include <iostream>
+#include <typeinfo>
 
 int	only_digit(char *str) {
 	int	i = 0;
+	if (str[i] == '-')
+		i++;
 	while (str[i]) {
 		if (isdigit(str[i]))
 			i++;
@@ -59,12 +63,12 @@ int test_sscanf(char *str) {
 	else if (sscanf(str, "%le", &d_buff))
 		return (T_D);
 	return T_ERROR;
+	return 0;
 }
 
 int main(int ac, char **av) {
 	if (ac == 1)
 		return 1;
-	//printf("%d\n", av[1][0]);
 	int res = test_sscanf(av[1]);
 	switch (res) {
 		case T_C:
@@ -88,6 +92,6 @@ int main(int ac, char **av) {
 		default:
 			printf("trop drole !\n");
 	}
-	test_sscanf(av[1]);
+	printf("%le\n", -1.0/0.0);
 	return 0;
 }
