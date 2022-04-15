@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 13:22:27 by dclark            #+#    #+#             */
-/*   Updated: 2022/04/14 15:47:30 by dclark           ###   ########.fr       */
+/*   Updated: 2022/04/15 13:18:56 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #define	T_CC 4
@@ -37,6 +37,8 @@ int	only_digit(char *str) {
 }
 
 int	only_float(char *str) {
+	if (strcmp(str, "-inff") == 0 || strcmp(str, "+inff") == 0 || strcmp(str, "nanf") == 0)
+		return (1);
 	int	res = strlen(str);
 	if (str[res - 1] == 'f')
 		return 1;
@@ -92,6 +94,5 @@ int main(int ac, char **av) {
 		default:
 			printf("trop drole !\n");
 	}
-	printf("%le\n", -1.0/0.0);
 	return 0;
 }
