@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 13:53:24 by dclark            #+#    #+#             */
-/*   Updated: 2022/04/15 14:53:00 by dclark           ###   ########.fr       */
+/*   Updated: 2022/04/15 16:32:54 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	only_float(char *str) {
 	int	i = 0;
 	int	point = 0;
 	if (strcmp(str, "-inff") == 0 || strcmp(str, "+inff") == 0 || strcmp(str, "nanf") == 0)
-		return (1);
+		return T_F;
 	while (str[i]) {
 		if (str[i] == '.') {
 			point++;
@@ -51,13 +51,13 @@ int	only_float(char *str) {
 			break;
 		}
 	}
-	if (str[i] == 'f' && point == 1)
-		return 1;
+	if (str[i] != 'f' && point == 1)
+		return T_ERROR;
 	double res;
 	sscanf(str, "%lf", &res);
 	if (res > FLT_MAX || res < FLT_MIN)
 		return OVER;
-	return 0;
+	return T_F;
 }
 
 int	only_double(char *str) {
@@ -114,5 +114,12 @@ int test_sscanf(char *str) {
 	}
 	return T_ERROR;
 	return 0;
+}
+
+void	char_to_other(char c) {
+	printf("char: [%c]\n", c);
+	printf("int: %d\n", (int)c);
+	printf("float: %ff\n", static_cast<float>(c));
+	printf("double: %g\n", (double)c);
 }
 

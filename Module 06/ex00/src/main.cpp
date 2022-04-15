@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 13:22:27 by dclark            #+#    #+#             */
-/*   Updated: 2022/04/15 14:53:02 by dclark           ###   ########.fr       */
+/*   Updated: 2022/04/15 16:20:30 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int main(int ac, char **av) {
 	switch (res) {
 		case T_C:
 			printf("c'est un char\n");
+			char_to_other(av[1][0]);
 			break;
 		case T_CC:
 			printf("char non affichable\n");
