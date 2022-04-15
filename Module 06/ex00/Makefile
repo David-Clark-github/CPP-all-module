@@ -6,7 +6,7 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/04/14 15:05:57 by dclark           ###   ########.fr        #
+#    Updated: 2022/04/15 14:15:05 by dclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,13 +17,14 @@ CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -I$(IDIR)
 ODIR	=	./.obj
 SDIR	=	./src
 
-NAME	=	"Conversion Scalaire"
+NAME	=	Conversion_Scalaire
 
-_DEPS	=	file.h
+_DEPS	=	Utils.h
 
 DEPS	=	$(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ	=	file.o #file.c ->file.o
+_OBJ	=	Utils.o \
+			main.o
 
 OBJ		=	$(patsubst %,$(ODIR)/%,$(_OBJ))
 

@@ -2,8 +2,8 @@
 #include <stdio.h>
 
 int main(void) {
-	printf("sizeof: %lu\n", sizeof(char *));
-	printf("sizeof: %lu\n", sizeof(int));
-	printf("sizeof: %lu\n", sizeof(float));
-	printf("sizeof: %lu\n", sizeof(double));
+	printf("sizeof(char *):	%lu\n", sizeof(char *));
+	printf("sizeof(int):	%lu\n", sizeof(int));
+	printf("sizeof(float):	%lu\n", sizeof(float));
+	printf("sizeof(double):	%lu\n", sizeof(double));
 }
