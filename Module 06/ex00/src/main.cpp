@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 13:22:27 by dclark            #+#    #+#             */
-/*   Updated: 2022/04/16 14:23:03 by dclark           ###   ########.fr       */
+/*   Updated: 2022/04/17 15:31:40 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main(int ac, char **av) {
 			break;
 		case T_I:
 			printf("c'est un int\n");
-			int_to_other((int)(av[1]));
+			int_to_other(atoi(av[1]));
 			break;
 		case T_F:
 			printf("c'est un float\n");

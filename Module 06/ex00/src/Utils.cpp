@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 13:53:24 by dclark            #+#    #+#             */
-/*   Updated: 2022/04/16 14:23:01 by dclark           ###   ########.fr       */
+/*   Updated: 2022/04/17 15:33:41 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,13 +124,15 @@ void	char_to_other(char c) {
 }
 
 void	int_to_other(int i) {
-	char *c;
+	char c;
 
-	void	*c_ptr = &i;
-	c = (char *)c_ptr;
-	/*
-		printf("char: [%c]\n", c[0]);
-	else
-		printf("Conversion impossible\n");
-		*/
+	if (i >= ' ' && i < 127) {
+		c = i;
+		printf("char: [%c]\n", c);
+	} else {
+		printf("char: (caractère non affichable)\n");
+	}
+	printf("int: %d\n", i);
+	printf("float: %ff\n", static_cast<float>(i));
+	printf("double: %g\n", (double)i);
 }
