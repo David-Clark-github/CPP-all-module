@@ -6,7 +6,7 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/04/20 13:03:32 by dclark           ###   ########.fr        #
+#    Updated: 2022/04/20 17:26:27 by dclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,7 @@ _DEPS	=	Array.h
 
 DEPS	=	$(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ	=	main.o \
-			Array.o
+_OBJ	=	main.o
 
 OBJ		=	$(patsubst %,$(ODIR)/%,$(_OBJ))
 

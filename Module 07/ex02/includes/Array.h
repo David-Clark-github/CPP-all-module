@@ -6,7 +6,7 @@
 /*   By: david <dclark@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 14:56:01 by david             #+#    #+#             */
-/*   Updated: 2022/04/20 13:38:14 by dclark           ###   ########.fr       */
+/*   Updated: 2022/04/20 17:30:14 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ T &	Array<T>::operator[](const size_t index) {
 		if (index > getSize() - 1) {
 			throw std::exception();
 		}
-	} catch (std::exception& e){
+	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
 		std::cout << "l'index est invalid" << std::endl;
 	}
