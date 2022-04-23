@@ -13,6 +13,8 @@ int main(int, char**)
         numbers[i] = value;
         mirror[i] = value;
     }
+    Array<int> tmp = numbers;
+    Array<int> test(tmp);
     //SCOPE
     {
         Array<int> tmp = numbers;
@@ -21,7 +23,7 @@ int main(int, char**)
 
     for (int i = 0; i < MAX_VAL; i++)
     {
-        if (mirror[i] != numbers[i])
+        if (test[i] != numbers[i])
         {
             std::cerr << "didn't save the same value!!" << std::endl;
             return 1;
