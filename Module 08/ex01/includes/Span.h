@@ -6,12 +6,13 @@
 /*   By: david <dclark@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 13:09:14 by david             #+#    #+#             */
-/*   Updated: 2022/04/24 14:54:58 by david            ###   ########.fr       */
+/*   Updated: 2022/04/24 16:41:55 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 class Span {
 	public:
@@ -22,7 +23,8 @@ class Span {
 
 		//Accessor
 		void			setSize(const unsigned int size);
-		unsigned int	getSize(void)const;
+		unsigned int	getSize(void);
+		unsigned int	getSizeVal(void);
 
 		void			addNumber(unsigned int n);
 		unsigned int	shortestSpan(void)const;
