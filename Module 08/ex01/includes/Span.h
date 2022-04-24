@@ -6,7 +6,7 @@
 /*   By: david <dclark@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 13:09:14 by david             #+#    #+#             */
-/*   Updated: 2022/04/24 16:41:55 by david            ###   ########.fr       */
+/*   Updated: 2022/04/24 20:08:58 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Span {
 		unsigned int	getSizeVal(void);
 
 		void			addNumber(unsigned int n);
-		unsigned int	shortestSpan(void)const;
+	//	unsigned int	shortestSpan(void)const;
 		unsigned int	longestSpan(void)const;
 
 	private:
