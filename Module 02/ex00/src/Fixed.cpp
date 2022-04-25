@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:10:01 by dclark            #+#    #+#             */
-/*   Updated: 2022/02/23 14:48:50 by dclark           ###   ########.fr       */
+/*   Updated: 2022/04/25 17:30:04 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Fixed::~Fixed(void) {
 Fixed   &Fixed::operator=(const Fixed &f) {
     std::cout << "Assignement operator called" << std::endl;
     if (this != &f) {
-		Fixed::_value = f.getRawBits();
+		this->_value = f.getRawBits();
     }
     return *this;
 }
