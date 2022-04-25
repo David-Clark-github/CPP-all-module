@@ -6,12 +6,13 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 14:04:05 by dclark            #+#    #+#             */
-/*   Updated: 2022/04/25 14:08:46 by dclark           ###   ########.fr       */
+/*   Updated: 2022/04/25 15:27:34 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int main() {
 	MutantStack<int> mstack;
+
 	mstack.push(5);
 	mstack.push(17);
 	std::cout << mstack.top() << std::endl;

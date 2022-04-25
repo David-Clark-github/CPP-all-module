@@ -6,7 +6,7 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/04/24 15:03:54 by david            ###   ########.fr        #
+#    Updated: 2022/04/25 15:28:15 by dclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,13 @@ CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -I$(IDIR)
 ODIR	=	./.obj
 SDIR	=	./src
 
-NAME	=	Span
+NAME	=	MutantStack
 
-_DEPS	=	Span.h
+_DEPS	=	MutantStack.h
 
 DEPS	=	$(patsubst %,$(IDIR)/%,$(_DEPS))
 
 _OBJ	=	main.o \
-			Span.o
 
 OBJ		=	$(patsubst %,$(ODIR)/%,$(_OBJ))
 
