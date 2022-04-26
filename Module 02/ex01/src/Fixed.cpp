@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:10:01 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/04 16:45:48 by dclark           ###   ########.fr       */
+/*   Updated: 2022/04/26 17:48:15 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,28 @@ void	Fixed::setRawBits(const int raw) {
     return;
 }
 
+void	Fixed::setFract(void) {
+	float	power = 2.0f;
+	this->_fraction_part = 0.0f;
+
+	int	index = 32 - 8;
+	for (; index < 32; index++) {
+		if (_tabBit[index] == 1) {
+			std::cout << (1.0f / power) << std::endl;
+			setFract2(getFract() + (1.0f / power));
+		}
+		power *= 2;
+	}
+}
+
+void	Fixed::setFract2(float value) {
+	this->_fraction_part = value;
+}
+
+float	Fixed::getFract(void)const {
+	return this->_fraction_part;
+}
+
 int	Fixed::toInt(void)const {
 	return (int)roundf(getRawBits());
 }
@@ -65,30 +87,20 @@ float	Fixed::toFloat(void)const {
 }
 
 void	Fixed::setTabBit(void) {
-	setValLong(4294967296 / 2);
 	int	val = getRawBits();
-	for (int index = 0; getValLong() > 0; index++) {
-		if (getValLong() <= val) {
-			val -= getValLong();
-			_tabBit[index] = 1;
-		} else {
-			_tabBit[index] = 0;
-		}
-		setValLong(getValLong() / 2);
+	int	index_tab = 0;
+	for (int i = 31; i >= 0; i--) {
+		_tabBit[index_tab] = ((val >> i) & 1);
+		index_tab++;
 	}
+	/*
 	for (int i = 0; i < 32; i++) {
+		if (i % 8 == 0 && i != 0)
+			std::cout << " ";
 		std::cout << _tabBit[i];
 	}
 	std::cout << std::endl;
-}
-
-long long	Fixed::getValLong(void)const {
-	return this->_val_long;
-}
-
-void	Fixed::setValLong(long long val) {
-	this->_val_long = val;
-	return;
+	*/
 }
 
 

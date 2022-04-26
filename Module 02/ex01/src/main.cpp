@@ -6,11 +6,12 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:09:43 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/04 16:45:50 by dclark           ###   ########.fr       */
+/*   Updated: 2022/04/26 17:48:18 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.h"
+#include <stdio.h>
 
 int main(void) {
     Fixed a;
@@ -28,5 +29,6 @@ int main(void) {
 	a.setTabBit();
 	a = Fixed(1234);
 	a.setTabBit();
+	std::cout << printf("%f", a.getFract()) << std::endl;
 	return 0;
 }
