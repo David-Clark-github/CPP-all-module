@@ -6,13 +6,13 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/04/25 15:28:15 by dclark           ###   ########.fr        #
+#    Updated: 2022/04/26 11:47:10 by dclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 IDIR	=	./includes
 CC		=	c++
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -I$(IDIR)
+CFLAGS	=	-Wall -Wextra -Werror -I$(IDIR) #-std=c++98 
 
 ODIR	=	./.obj
 SDIR	=	./src
@@ -23,7 +23,7 @@ _DEPS	=	MutantStack.h
 
 DEPS	=	$(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ	=	main.o \
+_OBJ	=	main.o
 
 OBJ		=	$(patsubst %,$(ODIR)/%,$(_OBJ))
 

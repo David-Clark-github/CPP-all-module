@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:10:16 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/04 16:15:13 by dclark           ###   ########.fr       */
+/*   Updated: 2022/04/26 13:18:05 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class Fixed {
 		static const int	_binary = 8;	
 		float				_fixed_point_val;
 		int					_tabBit[32];
-		long long				_val_long;
+		long long			_val_long;
 };
 
 #endif
