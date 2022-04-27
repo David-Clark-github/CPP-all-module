@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Utils.h                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 14:34:50 by dclark            #+#    #+#             */
-/*   Updated: 2022/04/27 13:15:58 by dclark           ###   ########.fr       */
+/*   Created: 2022/04/27 12:57:07 by dclark            #+#    #+#             */
+/*   Updated: 2022/04/27 13:28:07 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <stdint.h>
+#include <Utils.h>
 
-struct Data {
-	int	val;
-};
+int main(void) {
+	Data st1;
+	st1.val = 5;
+	Data *st2 = deserialize(serialize(&st1));
+	std::cout << st2->val << std::endl;
 
-uintptr_t serialize(Data* ptr);
-Data* deserialize(uintptr_t raw);
+}

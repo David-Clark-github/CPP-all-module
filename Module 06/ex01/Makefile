@@ -6,7 +6,7 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/04/16 14:34:19 by dclark           ###   ########.fr        #
+#    Updated: 2022/04/27 13:15:13 by dclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,13 +17,14 @@ CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -I$(IDIR)
 ODIR	=	./.obj
 SDIR	=	./src
 
-NAME	=	Sérialisation
+NAME	=	Dé-Sérialisation
 
-_DEPS	=	file(s).h
+_DEPS	=	Utils.h
 
 DEPS	=	$(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ	=	file(s).o
+_OBJ	=	main.o \
+			Utils.o
 
 OBJ		=	$(patsubst %,$(ODIR)/%,$(_OBJ))
 
