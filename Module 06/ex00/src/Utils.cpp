@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 13:53:24 by dclark            #+#    #+#             */
-/*   Updated: 2022/04/17 15:33:41 by david            ###   ########.fr       */
+/*   Updated: 2022/04/27 11:41:51 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	only_digit(char *str) {
 		if (isdigit(str[i]))
 			i++;
 		else
-			return 0;
+			return T_ERROR;
 	}
 	long res;
 	sscanf(str, "%ld", &res);
@@ -41,14 +41,19 @@ int	only_float(char *str) {
 	int	point = 0;
 	if (strcmp(str, "-inff") == 0 || strcmp(str, "+inff") == 0 || strcmp(str, "nanf") == 0)
 		return T_F;
+	if (str[0] == '-')
+		i++;
 	while (str[i]) {
 		if (str[i] == '.') {
 			point++;
 			i++;
 		} else if (isdigit(str[i])) {
 			i++;
-		} else {
-			break;
+		} else if (str[i] == 'f') {
+			if (str[i + 1] == '\0')
+				return T_F;
+			else
+				return (T_ERROR);
 		}
 	}
 	if (str[i] != 'f' && point == 1)
@@ -66,6 +71,8 @@ int	only_double(char *str) {
 	
 	if (strcmp(str, "-inf") == 0 || strcmp(str, "+inf") == 0 || strcmp(str, "nan") == 0)
 		return 1;
+	if (str[0] == '-')
+		i++;
 	while (str[i]) {
 		if (str[i] == '.') {
 			point++;
@@ -73,7 +80,7 @@ int	only_double(char *str) {
 		} else if (isdigit(str[i])){
 			i++;
 		} else {
-			return 0;
+			return T_ERROR;
 		}
 	}
 	if (point == 1)
@@ -93,7 +100,7 @@ int test_sscanf(char *str) {
 		}
 	}
 	if (only_digit(str) == OVER) {
-		return OVER;
+		return (OVER);
 	}
 	else if (strlen(str) == 1 && isdigit(str[0]) == 0) {
 		if (sscanf(str, "%c", &c_buff)) {
@@ -113,7 +120,6 @@ int test_sscanf(char *str) {
 		}
 	}
 	return T_ERROR;
-	return 0;
 }
 
 void	char_to_other(char c) {
