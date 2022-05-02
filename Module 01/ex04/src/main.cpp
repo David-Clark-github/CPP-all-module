@@ -6,7 +6,7 @@
 /*   By: david <dclark@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 15:25:48 by david             #+#    #+#             */
-/*   Updated: 2022/05/02 15:41:00 by dclark           ###   ########.fr       */
+/*   Updated: 2022/05/02 17:24:07 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int main(int ac, char **av) {
 	filename.append(".replace");
 	char			ofile_name[filename.length() + 1];
 	strcpy(ofile_name, filename.c_str());
-    std::ifstream	ifs(av[1]);
+    std::ifstream	ifs;
+	ifs.open(av[1], std::ios::in | std::ios::out);
 	if (!ifs) {
 		std::cout << "Error" << std::endl;
 		return 0;
@@ -39,8 +40,8 @@ int main(int ac, char **av) {
 	size_t				pos;
 
 	while (std::getline(ifs, buffer_tmp)) {
-		buffer += buffer_tmp;
-		buffer += nl;
+		buffer.append(buffer_tmp);
+		buffer.append(nl);
 	}
 
 	buffer.erase(buffer.length() - 1);
