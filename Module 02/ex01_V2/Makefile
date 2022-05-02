@@ -6,7 +6,7 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/04/25 17:21:46 by dclark           ###   ########.fr        #
+#    Updated: 2022/05/02 17:24:46 by dclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -I$(IDIR)
 ODIR	=	./.obj
 SDIR	=	./src
 
-NAME	=	Fixed_Point
+NAME	=	Classe_Utile
 
 _DEPS	=	Fixed.h
 

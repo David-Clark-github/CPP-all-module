@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:10:01 by dclark            #+#    #+#             */
-/*   Updated: 2022/05/02 16:21:43 by dclark           ###   ########.fr       */
+/*   Updated: 2022/05/02 17:30:05 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Fixed::~Fixed(void) {
 }
 
 Fixed   &Fixed::operator=(const Fixed &f) {
-    //std::cout << "Assignement operator called" << std::endl;
+    std::cout << "Assignement operator called" << std::endl;
     if (this != &f) {
 		this->_value = f.getRawBits();
     }
@@ -46,12 +46,12 @@ Fixed   &Fixed::operator=(const Fixed &f) {
 }
 
 int    Fixed::getRawBits(void)const {
-    //std::cout << "getRawBits member function called" << std::endl;
+  //  std::cout << "getRawBits member function called" << std::endl;
     return this->_value;
 }
 
 void    Fixed::setRawBits(const int raw) {
-	//std::cout << "setRawBits member function called" << std::endl;
+//	std::cout << "setRawBits member function called" << std::endl;
     this->_value = raw;
     return;
 }
@@ -65,7 +65,7 @@ int		Fixed::toInt(void)const {
 }
 
 std::ostream	&operator<<(std::ostream & o, Fixed const & f) {
-	//std::cout << "Insertion operator called" << std::endl;
+//	std::cout << "Insertion operator called" << std::endl;
 	o << f.toFloat();
 	return o;
 }

@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:09:43 by dclark            #+#    #+#             */
-/*   Updated: 2022/05/02 16:11:06 by dclark           ###   ########.fr       */
+/*   Updated: 2022/05/02 17:27:49 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,10 @@ int main(void) {
 	std::cout << "b is [" << b << "]" << std::endl;
 	std::cout << "c is [" << c << "]" << std::endl;
 	std::cout << "d is [" << d << "]" << std::endl;
+
+	std::cout << "a is [" << a.toInt() << "]" << " as integer" << std::endl;
+	std::cout << "b is [" << b.toInt() << "]" << " as integer" << std::endl;
+	std::cout << "c is [" << c.toInt() << "]" << " as integer" << std::endl;
+	std::cout << "d is [" << d.toInt() << "]" << " as integer" << std::endl;
+
 }
