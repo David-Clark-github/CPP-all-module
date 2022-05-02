@@ -6,35 +6,41 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/02/20 15:10:11 by david            ###   ########.fr        #
+#    Updated: 2022/05/02 15:36:58 by dclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	main.cpp
-
-
-HEADER	= ./
-
-NAME	= sed_c_est_pour_les_nuls
-
-CFLAGS	+= -Wall -Werror -Wextra -I $(HEADER) -std=c++98
-
-OBJS	= $(SRCS:.cpp=.o)
-
+IDIR	=	./includes
 CC		=	c++
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -I$(IDIR)
 
-all:	$(NAME)
+ODIR	=	./.obj
+SDIR	=	./src
+
+NAME	=	SED
+
+_DEPS	=
+
+DEPS	=	$(patsubst %,$(IDIR)/%,$(_DEPS))
+
+_OBJ	=	main.o
+
+OBJ		=	$(patsubst %,$(ODIR)/%,$(_OBJ))
+
+$(ODIR)/%.o: $(SDIR)/%.cpp $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(ODIR)/*.o
 
-fclean:	clean
+fclean: clean
 	rm -f $(NAME)
 
-re:		fclean
-	make
+re: fclean $(NAME)
 
-$(NAME):	$(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-
-.PHONY:	all clean fclean re
+.PHONY: all clean fclean re
