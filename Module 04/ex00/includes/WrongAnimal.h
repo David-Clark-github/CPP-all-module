@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.h                                         :+:      :+:    :+:   */
+/*   WrongAnimal.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dclark <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/02 17:33:52 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/02 18:01:05 by dclark           ###   ########.fr       */
+/*   Created: 2022/03/02 17:30:41 by dclark            #+#    #+#             */
+/*   Updated: 2022/05/03 12:28:26 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_H
+#ifndef WRONGANIMAL_H
 # define WRONGANIMAL_H
 
-#include "WrongAnimal.h"
+#include <iostream>
+#include <string>
 
-class WrongCat : public WrongAnimal {
+class WrongAnimal {
 	public:
-		WrongCat();
-		WrongCat(const WrongCat& wa);
-		WrongCat&	operator=(const WrongCat& wa);
-		~WrongCat();
-		void		makeSound(void)const;
+		WrongAnimal();
+		WrongAnimal(const WrongAnimal& wa);
+		WrongAnimal& operator=(const WrongAnimal& wa);
+		virtual ~WrongAnimal();
+		void		setType(const std::string type);
+		std::string	getType(void)const;
+		void	makeSound(void)const;
+
+	protected:
+		std::string	type;
 };
 
 #endif

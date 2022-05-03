@@ -6,14 +6,15 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:23:12 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/02 16:43:52 by dclark           ###   ########.fr       */
+/*   Updated: 2022/05/03 13:10:41 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.h"
 
 Animal::Animal(void) {
-	std::cout << "Default Animal constructor called" << std::endl;
+	setType("Animal");
+	std::cout << RED "Default Animal constructor called" NC << std::endl;
 	return;
 }
 
@@ -26,23 +27,23 @@ Animal::Animal(const Animal& a) {
 Animal&	Animal::operator=(const Animal& a) {
 	std::cout << "Assignement Animal ope = called" << std::endl;
 	if (this != &a) {
-		this->type = a.type;
+		this->_type = a._type;
 	}
 	return *this;
 }
 
 Animal::~Animal(void) {
-	std::cout << "Destructor Animal called" << std::endl;
+	std::cout << RED "Destructor Animal called" NC << std::endl;
 	return;
 }
 
 void	Animal::setType(const std::string type) {
-	this->type = type;
+	this->_type = type;
 	return;
 }
 
 std::string	Animal::getType(void)const {
-	return this->type;
+	return this->_type;
 }
 
 void	Animal::makeSound(void)const {

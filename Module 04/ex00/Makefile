@@ -6,40 +6,50 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/03/02 17:47:31 by dclark           ###   ########.fr        #
+#    Updated: 2022/05/03 12:27:20 by dclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	Animal.cpp \
-			WrongAnimal.cpp \
-			Dog.cpp \
-			Cat.cpp \
-			WrongCat.cpp \
-			main.cpp
-
-
-HEADER	= ./
-
-NAME	= Polymorphisme
-
-CFLAGS	+= -Wall -Werror -Wextra -I $(HEADER) -std=c++98
-
-OBJS	= $(SRCS:.cpp=.o)
-
+IDIR	=	./includes
 CC		=	c++
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -I$(IDIR)
 
-all:	$(NAME)
+ODIR	=	./.obj
+SDIR	=	./src
+
+NAME	=	Polymorphisme
+
+_DEPS	=	Animal.h \
+			Cat.h \
+			Dog.h \
+			WrongAnimal.h \
+			WrongCat.h
+
+DEPS	=	$(patsubst %,$(IDIR)/%,$(_DEPS))
+
+_OBJ	=	main.o \
+			Animal.o \
+			Cat.o \
+			Dog.o \
+			WrongAnimal.o \
+			WrongCat.o
+
+OBJ		=	$(patsubst %,$(ODIR)/%,$(_OBJ))
+
+$(ODIR)/%.o: $(SDIR)/%.cpp $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(ODIR)/*.o
 
-fclean:	clean
+fclean: clean
 	rm -f $(NAME)
 
-re:		fclean
-	make
+re: fclean $(NAME)
 
-$(NAME):	$(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-
-.PHONY:	all clean fclean re
+.PHONY: all clean fclean re
