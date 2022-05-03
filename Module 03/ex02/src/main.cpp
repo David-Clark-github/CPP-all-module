@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 16:04:29 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/24 13:09:46 by dclark           ###   ########.fr       */
+/*   Updated: 2022/05/03 11:10:49 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,14 @@ int main(void) {
 	def.attack(s.getName());
 	s.takeDammage(def.getAttackD());
 	test.highFivesGuyes();
+	def.attack(s.getName());
+	s.takeDammage(def.getAttackD());
+	def.attack(s.getName());
+	s.takeDammage(def.getAttackD());
+	def.attack(s.getName());
+	s.takeDammage(def.getAttackD());
+	s.highFivesGuyes();
+	s.attack(def.getName());
 
 	return 0;
 }	

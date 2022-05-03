@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 16:04:29 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/24 12:54:51 by dclark           ###   ########.fr       */
+/*   Updated: 2022/05/03 10:51:22 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ int main(void) {
 	toto.attack(def.getName());
 	def.takeDammage(toto.getAttackD());
 	toto.attack(def.getName());
+	toto.beRepaired(0);
 	return 0;
 }	
