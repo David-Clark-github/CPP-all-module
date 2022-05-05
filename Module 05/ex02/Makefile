@@ -6,32 +6,34 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/04/12 17:17:53 by dclark           ###   ########.fr        #
+#    Updated: 2022/05/05 15:55:04 by dclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 IDIR	=	./includes
 CC		=	c++
-CFLAGS	=	-I$(IDIR)
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -I$(IDIR)
 
-ODIR	=	./obj
+ODIR	=	./.obj
 SDIR	=	./src
 
 NAME	=	28B_ou_28C
 
-_DEPS	=	Form.h \
-			ShrubberyCreationForm.h \
-			Bureaucrat.h \
-			RobotomyRequestForm.h \
+_DEPS	=	Bureaucrat.h \
+			Form.h \
 			PresidentialPardonForm.h \
+			RobotomyRequestForm.h \
+			ShrubberyCreationForm.h
+
 DEPS	=	$(patsubst %,$(IDIR)/%,$(_DEPS))
 
 _OBJ	=	main.o \
-			Form.o \
-			ShrubberyCreationForm.o \
 			Bureaucrat.o \
+			Form.o \
+			PresidentialPardonForm.o \
 			RobotomyRequestForm.o \
-			PresidentialPardonForm.o
+			ShrubberyCreationForm.o
+
 OBJ		=	$(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: $(SDIR)/%.cpp $(DEPS)

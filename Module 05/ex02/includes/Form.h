@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:14:19 by dclark            #+#    #+#             */
-/*   Updated: 2022/04/12 18:57:12 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/27 18:23:08 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ class Bureaucrat;
 class A_Form {
 
 	public:
-		A_Form();
-		A_Form(const std::string name, const int gradeSign, const int gradeExec);
-		A_Form(const A_Form& f);
-		A_Form& operator=(const A_Form& f);
-		virtual ~A_Form();
+		Form();
+		Form(const std::string name, const int gradeSign, const int gradeExec);
+		Form(const Form& f);
+		Form& operator=(const Form& f);
+		virtual ~Form();
 
 		/* Grade exception */
 		class GradeTooLowException : public std::exception {
@@ -44,13 +44,12 @@ class A_Form {
 		};
 
 		/* Functions and accessors */
-		std::string		getName(void)const;
-		void			setFormSigne(bool signe);
-		bool			getFormSigne(void)const;
-		int				getGradeSigne(void)const;
-		int				getGradeExec(void)const;
-		virtual void	beSigned(Bureaucrat& b) = 0;
-		virtual	void	execute(Bureaucrat const & executor)const = 0;
+		std::string	getName(void)const;
+		void		setFormSigne(bool signe);
+		bool		getFormSigne(void)const;
+		int			getGradeSigne(void)const;
+		int			getGradeExec(void)const;
+		void		beSigned(Bureaucrat& b) = 0;
 
 	private:
 		const	std::string	_name;
@@ -60,6 +59,6 @@ class A_Form {
 
 };
 
-std::ostream &	operator<<(std::ostream & o, const A_Form & f);
+std::ostream &	operator<<(std::ostream & o, const Form & f);
 
 #endif

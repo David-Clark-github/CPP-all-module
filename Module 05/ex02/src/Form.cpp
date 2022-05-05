@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:49:36 by dclark            #+#    #+#             */
-/*   Updated: 2022/04/11 14:08:42 by dclark           ###   ########.fr       */
+/*   Updated: 2022/04/09 14:34:29 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ A_Form::A_Form(void) : _name("default"), _gradeSigne(150), _gradeExec(150) {
 }
 
 A_Form::A_Form(const std::string name, const int gradeSign, const int gradeExec)
-:_name(name), _gradeSigne(gradeSign), _gradeExec(gradeExec)
+:_name(name), _gradeSigne(gradeSign), _gradeExec(gradeSign)
 {
 	try {
 		if (gradeSign > 150 || gradeExec > 150) {

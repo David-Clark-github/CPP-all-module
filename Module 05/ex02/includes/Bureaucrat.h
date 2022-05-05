@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 17:37:08 by dclark            #+#    #+#             */
-/*   Updated: 2022/04/11 18:14:33 by dclark           ###   ########.fr       */
+/*   Updated: 2022/03/07 12:49:26 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <iostream>
 #include <stdexcept>
 
-class A_Form;
+class Form;
 
 class Bureaucrat {
 	public:
@@ -45,7 +45,7 @@ class Bureaucrat {
 		int			getGrade(void)const;
 		void		increGrade(const int val);
 		void		decreGrade(const int val);
-		void		signeForm(A_Form& f);
+		void		signeForm(Form& f);
 
 	private:
 		std::string	_name;
