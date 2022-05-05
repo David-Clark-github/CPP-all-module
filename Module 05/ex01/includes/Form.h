@@ -6,14 +6,14 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:14:19 by dclark            #+#    #+#             */
-/*   Updated: 2022/05/05 15:28:30 by dclark           ###   ########.fr       */
+/*   Updated: 2022/05/05 15:55:56 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_H
 # define FORM_H
 
-#include "Bureaucrat.h"
+#include <Bureaucrat.h>
 #include <iostream>
 #include <string>
 #include <stdexcept>

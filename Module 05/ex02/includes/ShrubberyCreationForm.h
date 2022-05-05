@@ -6,20 +6,20 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 17:37:02 by dclark            #+#    #+#             */
-/*   Updated: 2022/03/27 18:23:11 by dclark           ###   ########.fr       */
+/*   Updated: 2022/05/05 17:43:34 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBBERYCREATIONFORM_H
 # define SHRUBBERYCREATIONFORM_H
 
-#include "Form.h"
-#include "Bureaucrat.h"
+#include <Form.h>
+#include <Bureaucrat.h>
 #include <iostream>
 #include <string>
 #include <stdexcept>
 
-class ShrubberyCreationForm : public Form {
+class ShrubberyCreationForm : public A_Form {
 
 	public:
 		ShrubberyCreationForm();
@@ -31,7 +31,7 @@ class ShrubberyCreationForm : public Form {
 		class FormNotSignedException : public std::exception {
 			public:
 				virtual const char* what() const throw() {
-					return ("The form isn't signed")
+					return ("The form isn't signed");
 				}
 		};
 

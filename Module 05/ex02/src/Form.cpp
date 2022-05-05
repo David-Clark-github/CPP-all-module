@@ -6,19 +6,21 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:49:36 by dclark            #+#    #+#             */
-/*   Updated: 2022/04/09 14:34:29 by dclark           ###   ########.fr       */
+/*   Updated: 2022/05/05 17:41:40 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.h"
 
 A_Form::A_Form(void) : _name("default"), _gradeSigne(150), _gradeExec(150) {
+	this->setFormSigne(false);
 	return;
 }
 
 A_Form::A_Form(const std::string name, const int gradeSign, const int gradeExec)
 :_name(name), _gradeSigne(gradeSign), _gradeExec(gradeSign)
 {
+	this->setFormSigne(false);
 	try {
 		if (gradeSign > 150 || gradeExec > 150) {
 			throw A_Form::GradeTooLowException();
@@ -31,12 +33,16 @@ A_Form::A_Form(const std::string name, const int gradeSign, const int gradeExec)
 	return;
 }
 
-A_Form::A_Form(const A_Form& f) : _name(f.getName()), _formSigne(f.getFormSigne()), _gradeSigne(f.getGradeSigne()), _gradeExec(f.getGradeExec()) {
+A_Form::A_Form(const A_Form& f) 
+: _name(f.getName()), _gradeSigne(f.getGradeSigne()), _gradeExec(f.getGradeExec()) {
 	*this = f;
 	return;
 }
 
 A_Form& A_Form::operator=(const A_Form& f) {
+	if (this != &f) {
+		this->setFormSigne(f.getFormSigne());
+	}
 	return *this;
 }
 
