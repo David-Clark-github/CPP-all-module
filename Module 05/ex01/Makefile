@@ -6,36 +6,44 @@
 #    By: dclark <dclark@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 11:59:29 by dclark            #+#    #+#              #
-#    Updated: 2022/03/07 12:54:14 by dclark           ###   ########.fr        #
+#    Updated: 2022/05/05 14:51:52 by dclark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	main.cpp \
-			Bureaucrat.cpp \
-			Form.cpp
-
-HEADER	= ./
-
-NAME	= Bureaucrate_et_des_larves
-
-CFLAGS	+= -Wall -Werror -Wextra -I $(HEADER) -std=c++98 # -g -fsanitize=address
-
-OBJS	= $(SRCS:.cpp=.o)
-
+IDIR	=	./includes
 CC		=	c++
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -I$(IDIR)
 
-all:	$(NAME)
+ODIR	=	./.obj
+SDIR	=	./src
+
+NAME	=	EN_rang_les_larves!
+
+_DEPS	=	Bureaucrat.h \
+			Form.h
+
+DEPS	=	$(patsubst %,$(IDIR)/%,$(_DEPS))
+
+_OBJ	=	main.o \
+			Bureaucrat.o \
+			Form.o
+
+OBJ		=	$(patsubst %,$(ODIR)/%,$(_OBJ))
+
+$(ODIR)/%.o: $(SDIR)/%.cpp $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(ODIR)/*.o
 
-fclean:	clean
+fclean: clean
 	rm -f $(NAME)
 
-re:		fclean
-	make
+re: fclean $(NAME)
 
-$(NAME):	$(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-
-.PHONY:	all clean fclean re
+.PHONY: all clean fclean re
