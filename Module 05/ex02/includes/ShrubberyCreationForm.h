@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 17:37:02 by dclark            #+#    #+#             */
-/*   Updated: 2022/05/05 17:43:34 by dclark           ###   ########.fr       */
+/*   Updated: 2022/05/06 11:21:30 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 class ShrubberyCreationForm : public A_Form {
 
 	public:
-		ShrubberyCreationForm();
+		ShrubberyCreationForm(const std::string target);
 		ShrubberyCreationForm(const ShrubberyCreationForm& s);
 		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& s);
 		virtual ~ShrubberyCreationForm();
@@ -35,8 +35,11 @@ class ShrubberyCreationForm : public A_Form {
 				}
 		};
 
-		void	beSigned(Bureaucrat& b);
-		void	execute(Bureaucrat const & executor)const;
+		void		beSigned(Bureaucrat& b);
+		void		execute(Bureaucrat const & executor)const;
+		std::string	getTarget(void)const;
+	private:
+		const std::string	_target;
 };
 
 #endif

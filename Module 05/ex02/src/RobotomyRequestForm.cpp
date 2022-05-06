@@ -6,7 +6,7 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 17:49:55 by dclark            #+#    #+#             */
-/*   Updated: 2022/04/11 17:50:56 by dclark           ###   ########.fr       */
+/*   Updated: 2022/05/06 13:46:45 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Form.h"
@@ -23,7 +23,7 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target)
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& r)
-: A_Form("RobotomyRequestForm", r.getGradeSigne(), r.getGradeExec()), _target(r.getTarget())
+: A_Form("RobotomyRequestForm", 72, 45), _target(r.getTarget())
 {
 	srand (time(NULL));
 	*this = r;
@@ -33,7 +33,6 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& r)
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& r)
 {
 	if (this != &r) {
-		this->setTarget(r.getTarget());
 		this->setFormSigne(r.getFormSigne());
 	}
 	return *this;

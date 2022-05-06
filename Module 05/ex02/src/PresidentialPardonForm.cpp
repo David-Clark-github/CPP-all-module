@@ -6,11 +6,11 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 17:49:55 by dclark            #+#    #+#             */
-/*   Updated: 2022/04/11 17:57:24 by dclark           ###   ########.fr       */
+/*   Updated: 2022/05/06 13:25:04 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "Form.h"
-#include "PresidentialPardonForm.h"
+#include <Form.h>
+#include <PresidentialPardonForm.h>
 #include <fstream>
 #include <iostream>
 
@@ -21,7 +21,7 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target)
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& r)
-: A_Form("PresidentialPardonForm", r.getGradeSigne(), r.getGradeExec()), _target(r.getTarget())
+: A_Form("PresidentialPardonForm", 25, 5), _target(r.getTarget())
 {
 	*this = r;
 	return;
@@ -30,7 +30,6 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& r)
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& r)
 {
 	if (this != &r) {
-		this->setTarget(r.getTarget());
 		this->setFormSigne(r.getFormSigne());
 	}
 	return *this;
