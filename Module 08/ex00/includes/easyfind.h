@@ -6,9 +6,12 @@
 /*   By: david <dclark@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 21:25:52 by david             #+#    #+#             */
-/*   Updated: 2022/04/24 11:46:01 by david            ###   ########.fr       */
+/*   Updated: 2022/05/10 17:22:20 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef EASYFIND_H
+# define EASYFIND_H
 
 #include <iostream>
 #include <exception>
@@ -32,3 +35,5 @@ void	easyfind(T container, int occurence) {
 		std::cout << e.what() << std::endl;
 	}
 }
+
+#endif

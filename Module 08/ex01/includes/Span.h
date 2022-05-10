@@ -6,9 +6,12 @@
 /*   By: david <dclark@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 13:09:14 by david             #+#    #+#             */
-/*   Updated: 2022/04/25 11:51:34 by dclark           ###   ########.fr       */
+/*   Updated: 2022/05/10 17:21:49 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef SPAN_H
+# define SPAN_H
 
 #include <iostream>
 #include <vector>
@@ -39,3 +42,5 @@ class Span {
 		std::vector<int>	_myVar;
 		unsigned int		_sizeMax;
 };
+
+#endif

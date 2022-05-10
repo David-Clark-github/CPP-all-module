@@ -6,37 +6,31 @@
 /*   By: dclark <dclark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:56:11 by dclark            #+#    #+#             */
-/*   Updated: 2022/04/26 12:32:45 by dclark           ###   ########.fr       */
+/*   Updated: 2022/05/10 17:21:15 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef MUTANTSTACK_H
+# define MUTANTSTACK_H
+
 #include <iostream>
-#include <iterator>
 #include <stack>
-#include <vector>
 
-template<typename T,typename Container = std::vector<T>>
-class MutantStack : public std::stack<T, Container> {
-		using std::stack<T, Container>::c;
+template<typename T>
+class MutantStack : public std::stack<T> {
 	public:
-		//Accessor
-		Container::iterator begin () {
-			return _myVec.begin();
+		MutantStack() {}
+		MutantStack(const MutantStack<T> &m) {*this = m;}
+		MutantStack<T> operator=(const MutantStack<T> &m) {
+			this->c = *m.c;
+			return *this;
 		}
-	
-		Container::iterator end () {
-			return _myVec.end();
-		}
-	
-		Container::iterator begin () const {
-			return _myVec.begin();
-		}
-	
-		Container::iterator end () const {
-			return _myVec.end();
-		}
-	
-	private:
-		Container _myVec;
+		~MutantStack() {}
 
+		typedef typename std::stack<T>::container_type::iterator iterator;
+
+		iterator begin() {return this->c.begin();}
+		iterator end() {return this->c.end();}
 };
+
+#endif
