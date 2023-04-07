@@ -6,7 +6,7 @@
 /*   By: david <dclark@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 17:04:29 by david             #+#    #+#             */
-/*   Updated: 2022/04/18 22:57:44 by david            ###   ########.fr       */
+/*   Updated: 2022/05/10 13:41:57 by dclark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	f(T element) {
 }
 
 template<typename T>
-void	iter(T tab[], int const size, void(*f)(T)) {
-	for (int i = 0; i < size; i++)
+void	iter(T tab[], const size_t size, void(*f)(T)) {
+	for (size_t i = 0; i < size; i++)
 		f(tab[i]);
 }
 
